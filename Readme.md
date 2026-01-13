@@ -7,7 +7,6 @@ AI agents are multiplying across the enterprise. Similar to the challenges with 
 <p align="center">
   <img src="./assets/images/Silent%20Proliferation.png" alt="Silent Proliferation" width="600">
   <br>
-  <em>Figure 1: AI agents create a visibility vacuum</em>
 </p>
 
 
@@ -22,7 +21,6 @@ Because agents are easy to build and deploy, they create multiple challenges:
 <p align="center">
   <img src="./assets/images/The%20Visibility%20Vaccum.png" alt="The Visibility Vaccum" width="600">
   <br>
-  <em>Figure 2: AI agents create a discovery gap, risk multiplier, and cost bloat</em>
 </p>
 
 This document serves as a comprehensive template for capturing the essential metadata and core configuration parameters of a specific AI agent. The strategic importance of this template lies in its role as a standardized framework for organizations leveraging enterprise-grade agentic solutions.
