@@ -2,7 +2,7 @@
 
 ## Introduction
 
-AI agents are multiplying across the enterprise. Similar to the challenges with shadow IT, AI agents are creating so called shadow action. AI agents are often unmanaged, unmapped and autonomous. The result is a critical visibility vacuum (see Figure 1).
+AI agents are multiplying across the enterprise. Similar to the challenges with shadow IT, AI agents are creating so called shadow action. AI agents are often unmanaged, unmapped and autonomous. The result is a critical visibility vacuum.
 
 <p align="center">
   <img src="./assets/images/Silent%20Proliferation.png" alt="Silent Proliferation" width="600">
@@ -13,7 +13,7 @@ AI agents are multiplying across the enterprise. Similar to the challenges with 
 
 ## Agent Proliferation and Challenges
 
-Because agents are easy to build and deploy, they create multiple challenges (see **Figure 2**):
+Because agents are easy to build and deploy, they create multiple challenges:
 
 - *Discovery Gap* – Organizations do not know that the agents exist, who owns them, or where they operate.
 - *Risk Multiplier* – Agents may operate as unmonitored “digital insiders” with high privileges and broad access.
@@ -43,20 +43,18 @@ By implementing this robust metadata specification, enterprises gain several cri
 
 ## Agent Proliferation
 
-Traditional metadata platforms capture information primarily from analytical systems. However, the metadata challenges increase exponentially for agents, which also leverage operational systems (see **Figure 3**).
+Traditional metadata platforms capture information primarily from analytical systems. However, the metadata challenges increase exponentially for agents, which also leverage operational systems.
 
 <p align="center">
   <img src="./assets/images/A%20Critical%20Shift%20in%20Risk.png" alt="A Critical Shift in Risk" width="600">
   <br>
-  <em>Figure 3: Agent metadata increases exponentially from analytical to operational systems</em>
 </p>
 
-A number of platforms either produce or consume agent metadata (see **Figure 4**).
+A number of platforms either produce or consume agent metadata.
 
 <p align="center">
   <img src="./assets/images/Enterprises%20must%20get%20ready%20to%20govern%20exponential%20agentic%20sprawl.png" alt="Enterprises must get ready to govern exponential agentic sprawl" width="600">
   <br>
-  <em>Figure 4: Producers and consumers of agent metadata</em>
 </p>
 
 ### Agent Metadata Producers including the following:
