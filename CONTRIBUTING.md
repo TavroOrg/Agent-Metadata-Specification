@@ -42,7 +42,7 @@ The following individuals are acknowledged for their significant contributions t
         </tr>
         <tr>
             <td>Gokula Mishra</td>
-            <td>OmniProAI</td>
+            <td>OmniProAI (Former Global Head of Data & Analytics & Supply Chain, McDonald’s)</td>
         </tr>
         <tr>
             <td>Rahul Pandit</td>
