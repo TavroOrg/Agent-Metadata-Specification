@@ -74,10 +74,10 @@ A number of platforms either produce or consume agent metadata (see **Figure 4**
 
 ### Agent Metadata Consumers including the following:
 
-- **Hyperscalers** (e.g., Microsoft Agent 365, IBM watsonx)
-- **Data Catalogs** (e.g., Alation, Atlan, Collibra, data.world/ServiceNow, Informatica/Salesforce)
-- **Enterprise Applications** (e.g., ServiceNow AI Control Tower, Workday Illuminate)
-- **Governance, Risk, and Compliance (GRC) Platforms** (e.g., Archer, Hyperproof, MetricStream, ServiceNow IRM)
+- Hyperscalers (e.g., Microsoft Agent 365, IBM watsonx)
+- Data Catalogs (e.g., Alation, Atlan, Collibra, data.world/ServiceNow, Informatica/Salesforce)
+- Enterprise Applications (e.g., ServiceNow AI Control Tower, Workday Illuminate)
+- Governance, Risk, and Compliance (GRC) Platforms (e.g., Archer, Hyperproof, MetricStream, ServiceNow IRM)
 
 ## Agent Data Model
 
