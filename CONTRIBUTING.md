@@ -1,0 +1,56 @@
+# Acknowledgements
+
+## Leader Authors:
+
+- **Sunil Soares (Tavro AI)**
+- **Sanjeev Varma (Tavro AI)**
+
+## Key Contributors and Reviewers
+The following individuals are acknowledged for their significant contributions to the review and development of this document, listed alphabetically by last name:
+
+<table>
+    <thead>
+        <tr>
+            <th><b>Key Contributor/Reviewer Name</b></th>
+            <th><b>Affiliation</b></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prasanna Kumar Akiri</td>
+            <td>Tavro AI</td>
+        </tr>
+        <tr>
+            <td>Val Calvo</td>
+            <td>BankUnited</td>
+        </tr>
+        <tr>
+            <td>Stan Christiaens</td>
+            <td>Collibra</td>
+        </tr>
+        <tr>
+            <td>Tony DiPerna</td>
+            <td>BankUnited</td>
+        </tr>
+        <tr>
+            <td>Mihir Dudhatra</td>
+            <td>Tavro AI</td>
+        </tr>
+        <tr>
+            <td>Manirajkumar Kotha</td>
+            <td>Tavro AI</td>
+        </tr>
+        <tr>
+            <td>Gokula Mishra</td>
+            <td>OmniProAI</td>
+        </tr>
+        <tr>
+            <td>Rahul Pandit</td>
+            <td>Tavro AI</td>
+        </tr>
+        <tr>
+            <td>Khushboo Shah</td>
+            <td>Tavro AI</td>
+        </tr>
+    </tbody>
+</table>
