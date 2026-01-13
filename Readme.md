@@ -25,11 +25,7 @@ Because agents are easy to build and deploy, they create multiple challenges (se
   <em>Figure 2: AI agents create a discovery gap, risk multiplier, and cost bloat</em>
 </p>
 
----
-
 This document serves as a comprehensive template for capturing the essential metadata and core configuration parameters of a specific AI agent. The strategic importance of this template lies in its role as a standardized framework for organizations leveraging enterprise-grade agentic solutions.
-
----
 
 ## Importance of Agent Metadata Standards
 
@@ -63,21 +59,18 @@ A number of platforms either produce or consume agent metadata (see **Figure 4**
   <em>Figure 4: Producers and consumers of agent metadata</em>
 </p>
 
----
-
 ### Agent Metadata Producers including the following:
 
-- **Hyperscalers** (e.g., Microsoft Copilot, Google Vertex AI, IBM watsonx, Amazon Bedrock)
-- **LLM Providers** (e.g., OpenAI, Anthropic, Perplexity)
-- **Data Cloud Providers** (e.g., Snowflake, Databricks)
-- **Pure Play Agent Platforms** (e.g., crewAI, LangGraph)
-- **Data Science Vendors** (e.g., Dataiku, DataRobot, SAS)
-- **Enterprise Applications with out-of-the-box (OOTB) and roll-your-own (RYO) agents**  
+- Hyperscalers (e.g., Microsoft Copilot, Google Vertex AI, IBM watsonx, Amazon Bedrock)
+- LLM Providers (e.g., OpenAI, Anthropic, Perplexity)
+- Data Cloud Providers (e.g., Snowflake, Databricks)
+- Pure Play Agent Platforms (e.g., crewAI, LangGraph)
+- Data Science Vendors (e.g., Dataiku, DataRobot, SAS)
+- Enterprise Applications with out-of-the-box (OOTB) and roll-your-own (RYO) agents
   (e.g., ServiceNow NowAssist, SAP Joule, Workday Illuminate, Salesforce Agentforce)
-- **Industry-Specific Applications with OOTB and RYO agents**  
+- Industry-Specific Applications with OOTB and RYO agents  
   (e.g., Fiserv and NICE Actimize in Banking, Epic and Oracle in healthcare, Guidewire in Insurance)
-
-> The typical enterprise uses more than 1,000 applications, and an increasing percentage of these will have both Out-Of-The-Box (OOTB) and Roll-Your-Own (RYO) agents.
+- The typical enterprise uses more than 1,000 applications and an increasing percentage of these platforms will have OOTB and RYO agents
 
 ### Agent Metadata Consumers including the following:
 
@@ -89,8 +82,6 @@ A number of platforms either produce or consume agent metadata (see **Figure 4**
 ## Agent Data Model
 
 The template is logically partitioned into the following key sections, each addressing a distinct facet of the Agent's identity, operation, and lifecycle:
-
----
 
 - **Agent Identification:** This foundational section is dedicated to capturing the metadata required to uniquely identify the Agent. This includes key identifiers, its current deployment status (e.g., development, staging, production, deprecated), versioning information, and the essential details regarding its ownership and organizational context.
 
