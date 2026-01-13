@@ -2,8 +2,8 @@
 
 ## Leader Authors:
 
-- **Sunil Soares (Tavro AI)**
-- **Sanjeev Varma (Tavro AI)**
+- Sunil Soares (Tavro AI)
+- Sanjeev Varma (Tavro AI)
 
 ## Key Contributors and Reviewers
 The following individuals are acknowledged for their significant contributions to the review and development of this document, listed alphabetically by last name:
