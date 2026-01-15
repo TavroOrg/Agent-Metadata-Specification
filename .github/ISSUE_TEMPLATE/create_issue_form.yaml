@@ -1,0 +1,24 @@
+name: Create Issue Form
+description: Create an issue with raised by information
+title: "[Issue]: "
+labels: []
+assignees: []
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the issue in detail
+      placeholder: Provide a clear and detailed description
+    validations:
+      required: true
+
+  - type: input
+    id: raised_by
+    attributes:
+      label: Raised by
+      description: Name or GitHub username of the person raising this issue
+      placeholder: e.g. @username or John Doe
+    validations:
+      required: false
