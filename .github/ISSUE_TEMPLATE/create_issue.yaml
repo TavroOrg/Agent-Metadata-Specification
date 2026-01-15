@@ -1,6 +1,6 @@
-name: Create Issue Form
-description: Create an issue with raised by information
-title: "[Issue]: "
+name: Create Issue
+description: Use this form to create an issue and specify who raised it
+title: ""
 labels: []
 assignees: []
 
