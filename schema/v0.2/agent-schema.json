@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tavro Agent Metadata Specification",
+  "version": "0.2.1",
+  "description": "A standardized framework for defining AI Agent identity, configuration, lineage, and risk controls as published by Tavro AI, LLC.",
+  "type": "object",
+  "required": ["identification", "configuration"],
+  "properties": {
+    "identification": {
+      "type": "object",
+      "description": "Core identifying and descriptive details of the agent.",
+      "required": ["agent_id", "title", "owner", "environment", "governance_status"],
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "description": "A unique, permanent identifier for the agent (e.g., HR-POL-003)."
+        },
+        "agent_version": {
+          "type": "string",
+          "description": "The current version number of the agent's configuration and logic."
+        },
+        "title": {
+          "type": "string",
+          "description": "The human-readable name of the agent."
+        },
+        "description": {
+          "type": "string",
+          "description": "A concise summary of the agent's purpose, capabilities, and target user."
+        },
+        "goal_orientation": {
+          "type": "string",
+          "description": "The specific objective or success metric the agent is designed to achieve."
+        },
+        "instruction": {
+          "type": "string",
+          "description": "Detailed operational instructions that define the agent's objectives, rules, workflow steps, and execution constraints."
+        },
+        "role": {
+          "type": "string",
+          "description": "The defined character or communication style that governs its interaction."
+        },
+        "owner": {
+          "type": "string",
+          "description": "The team or department responsible for the agent's maintenance and cost."
+        },
+        "environment": {
+          "type": "string",
+          "enum": ["DEV", "UAT", "PROD"],
+          "description": "The deployment environment."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "A list of keywords for search and categorization."
+        },
+        "governance_status": {
+          "type": "string",
+          "enum": ["DRAFT", "APPROVED", "DECOMMISSIONED"],
+          "description": "The current governance lifecycle status."
+        },
+        "reviewer": {
+          "type": "string",
+          "description": "Name of the person who approved the latest governance status."
+        },
+        "created_date": {
+          "type": "string",
+          "description": "The date when the agent was created first."
+        },
+        "created_by": {
+          "type": "string",
+          "description": "The team or department who created the agent."
+        },
+        "last_updated_date": {
+          "type": "string",
+          "description": "The date when the agent was last updated."
+        },
+        "last_updated_by": {
+          "type": "string",
+          "description": "The team or department who last updated the agent."
+        }
+      }
+    },
+    "configuration": {
+      "type": "object",
+      "description": "Technical architecture and underlying components of the Agent.",
+      "properties": {
+        "llm_model": {
+          "type": "string",
+          "description": "The specific foundational model used by the agent (e.g., gemini-2.5-flash)."
+        },
+        "prompt_template_reference": {
+          "type": "string",
+          "description": "The ID of the template used for guiding LLM behavior."
+        },
+        "access_scope": {
+          "type": "string",
+          "description": "The agent's overall data access level (e.g., LOW_PRIVILEGE)."
+        },
+        "memory_storage_reference": {
+          "type": "string",
+          "description": "The external system used for long-term data/vector storage."
+        },
+        "memory_type": {
+          "type": "string",
+          "description": "The type of memory storage used (e.g., VECTOR_DB, KEY_VALUE_STORE)."
+        },
+        "data_freshness_policy": {
+          "type": "string",
+          "description": "The maximum acceptable age of the data (caching policy) for the source."
+        },
+        "autonomy_level": {
+          "type": "string",
+          "enum": ["FULL", "SEMI-AUTONOMOUS", "REACTIVE"],
+          "description": "The degree to which the agent can act independently without human approval."
+        },
+        "reasoning_model": {
+          "type": "string",
+          "description": "The underlying logic or planning paradigm (e.g., ReAct, ReWOO)."
+        },
+        "multimodal_capability": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "The types of input the agent can process."
+        }
+      }
+    },
+    "knowledge_sources": {
+      "type": "array",
+      "description": "Information resources the Agent relies upon.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string", "description": "A Unique ID for the knowledge source." },
+          "name": { "type": "string", "description": "Name of specific data sources (e.g., databases, documents)." },
+          "access_mechanism": { "type": "string", "description": "Protocol or service used to retrieve knowledge (e.g., REST API)." }
+        }
+      }
+    },
+    "tools_and_actions": {
+      "type": "array",
+      "description": "Functional capabilities and interaction boundaries.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string", "description": "Unique reference ID for the tool." },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "delegation_possible": { "type": "boolean" },
+          "allowed_delegates": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of Agent IDs allowed for delegation."
+          },
+          "input_or_output": { "type": "string", "enum": ["INPUT", "OUTPUT"] },
+          "parameter_name": { "type": "string" },
+          "parameter_type": { "type": "string" },
+          "default_value": { "type": ["string", "number", "boolean", "null"] }
+        }
+      }
+    },
+    "business_process": {
+      "type": "array",
+      "description": "Business processes that consume the agent.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "consumption_type": { "type": "string", "enum": ["PRIMARY", "SECONDARY"] }
+        }
+      }
+    },
+    "application": {
+      "type": "array",
+      "description": "Applications that consume the agent.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string", "description": "Reference to an application CMDB ID." },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "consumption_type": { "type": "string", "enum": ["PRIMARY", "SECONDARY"] }
+        }
+      }
+    },
+    "data_lineage": {
+      "type": "array",
+      "description": "Mapping of decision paths from source to target objects.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "relationship_id": { "type": "string" },
+          "parent_relationship_id": { "type": "string" },
+          "source_object_id": { "type": "string" },
+          "source_object_domain": { "type": "string" },
+          "source_object_name": { "type": "string" },
+          "source_object_type": { "type": "string" },
+          "target_object_id": { "type": "string" },
+          "target_object_domain": { "type": "string" },
+          "target_object_name": { "type": "string" },
+          "target_object_type": { "type": "string" },
+          "access_level": { "type": "string", "enum": ["READ", "WRITE", "DELETE"] }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Consolidated view of risks (Compliance, Cyber, Responsible AI, etc.).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "type": { "type": "string", "description": "e.g., Compliance, Reputational, Cyber" },
+          "impact": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] },
+          "likelihood": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] },
+          "risk_vector": { "type": "string", "description": "Risk type identifier." },
+          "score": { "type": "integer", "minimum": 1, "maximum": 10, "description": "Numeric risk score (1-10)." }
+        }
+      }
+    },
+    "controls": {
+      "type": "array",
+      "description": "Controls designed to mitigate identified risks.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifier": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "risk_identifier": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of risk IDs this control mitigates."
+          }
+        }
+      }
+    },
+    "aivss": {
+      "type": "object",
+      "description": "AI Vulnerability Scoring System (AIVSS) assessment including AARS attributes and security scoring.",
+      "properties": {
+        "aars": {
+          "type": "object",
+          "description": "Agent Attributes & Risk Scoring (AARS) assessments.",
+          "properties": {
+            "autonomy_of_action": { "type": "string", "description": "Autonomy of Action attribute." },
+            "tool_use": { "type": "string", "description": "Dynamic Tool Use attribute." },
+            "memory_use": { "type": "string", "description": "Memory Use attribute." },
+            "dynamic_identity": { "type": "string", "description": "Dynamic Identity attribute." },
+            "multi_agent_interactions": { "type": "string", "description": "Multi-agent Interactions attribute." },
+            "non_determinism": { "type": "string", "description": "Non-Determinism attribute." },
+            "self_modification": { "type": "string", "description": "Self-Modification attribute." },
+            "goal_driven_planning": { "type": "string", "description": "Goal-Driven Planning attribute." },
+            "contextual_awareness": { "type": "string", "description": "Contextual Awareness attribute." },
+            "opacity_and_reflexivity": { "type": "string", "description": "Opacity and Reflexivity attribute." }
+          }
+        },
+        "cvss_4_0": { "type": "string", "description": "CVSS 4.0 Base scoring." },
+        "threat_multiplier": { "type": "string", "description": "Threat Multiplier (THM) scoring." },
+        "aivss_score": { "type": "string", "description": "Overall AIVSS Score." }
+      }
+    }
+  }
+}
