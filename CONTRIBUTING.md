@@ -2,7 +2,7 @@
 
 ## Leader Authors:
 
-- Sunil Soares (Tavro AI)
+- [Sunil Soares](https://github.com/sunil-tavro) (Tavro AI)
 - [Sanjeev Varma](https://github.com/sanjeev-tavro) (Tavro AI)
 
 ## Key Contributors and Reviewers
