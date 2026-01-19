@@ -21,6 +21,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Venkata Atluri</td>
+            <td>USAA</td>
+        </tr>
+        <tr>
             <td>Val Calvo</td>
             <td>BankUnited</td>
         </tr>
@@ -37,12 +41,28 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Pierre Gomes</td>
+            <td>BankUnited</td>
+        </tr>
+        <tr>
+            <td>Shawn Harbaugh</td>
+            <td>Citizens & Northern Bank</td>
+        </tr>
+        <tr>
+            <td>Mike Jennings</td>
+            <td>Independent Contributor (Formerly Walgreens)</td>
+        </tr>
+        <tr>
+            <td>Peter Kapur</td>
+            <td>CarMax</td>
+        </tr>
+        <tr>
             <td><a href="https://github.com/manirajkumar-tavro" target="_blank">Manirajkumar Kotha</td>
             <td>Tavro AI</td>
         </tr>
         <tr>
             <td>Gokula Mishra</td>
-            <td>OmniProAI (Former Global Head of Data & Analytics & Supply Chain, McDonald’s)</td>
+            <td>OmniProAI (Formerly McDonald’s)</td>
         </tr>
         <tr>
             <td><a href="https://github.com/rahul-tavro" target="_blank">Rahul Pandit</td>
@@ -51,6 +71,10 @@ The following individuals are acknowledged for their significant contributions t
         <tr>
             <td><a href="https://github.com/kdshah2205" target="_blank">Khushboo Shah</td>
             <td>Tavro AI</td>
+        </tr>
+        <tr>
+            <td>Doug Shannon</td>
+            <td>Independent Contributor</td>
         </tr>
     </tbody>
 </table>
