@@ -1,1 +1,581 @@
-
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Metadata Specification",
+  "version": "0.2.2",
+  "description": "A standardized framework for defining AI Agent identity, configuration, lineage, and risk controls",
+  "type": "object",
+  "properties": {
+    "agent": {
+      "type": "object",
+      "description": "Core AI Agent definition.",
+      "required": ["identification", "configuration"],
+      "properties": {
+        "identification": {
+          "type": "object",
+          "description": "Core identifying, descriptive, and governance details of the agent.",
+          "required": ["agent_id", "title", "description", "owner", "instruction"],
+          "properties": {
+            "agent_id": {
+              "type": "string",
+              "description": "A unique, permanent identifier for the agent (e.g., HR-POL-003)"
+            },
+            "agent_version": {
+              "type": "string",
+              "description": "The current version number of the agent's configuration and logic"
+            },
+            "title": {
+              "type": "string",
+              "description": "The human-readable name of the agent (e.g., Internal HR Policy Assistant)"
+            },
+            "description": {
+              "type": "string",
+              "description": "A concise summary of the agent's purpose, capabilities, and target user"
+            },
+            "goal_orientation": {
+              "type": "string",
+              "description": "The specific objective or success metric the agent is designed to achieve"
+            },
+            "role": {
+              "type": "string",
+              "description": "The defined character or communication style that governs its interaction"
+            },
+            "owner": {
+              "type": "string",
+              "description": "The team or department responsible for the agent's maintenance and cost"
+            },
+            "environment": {
+              "type": "string",
+              "description": "The deployment environment (e.g., DEV, UAT, PROD)"
+            },
+            "tags": {
+              "type": "array",
+              "description": "A list of keywords for search and categorization (e.g., HR, policy, internal)",
+              "items": {
+                "type": "string"
+              }
+            },
+            "governance_status": {
+              "type": "string",
+              "description": "The current governance lifecycle status (e.g., DRAFT, APPROVED, DECOMMISSIONED)"
+            },
+            "reviewer": {
+              "type": "string",
+              "description": "Name of the person who approved the latest governance status."
+            }
+          }
+        },
+        "configuration": {
+          "type": "object",
+          "description": "Configuration details governing agent behavior and capabilities.",
+          "required": [],
+          "properties": {
+            "prompt_template_reference": {
+              "type": "string",
+              "description": "ID of the prompt template used to guide LLM behavior."
+            },
+            "access_scope": {
+              "type": "string",
+              "description": "Overall data access level of the agent."
+            },
+            "memory_storage_reference": {
+              "type": "string",
+              "description": "Agent memory and storage configuration."
+            },
+            "memory_type": {
+              "type": "string",
+              "description": "Type of memory storage used."
+            },
+            "data_freshness_policy": {
+              "type": "string",
+              "description": "Maximum acceptable age of cached data."
+            },
+            "autonomy_level": {
+              "type": "string",
+              "description": "Degree of independent action without human approval."
+            },
+            "reasoning_model": {
+              "type": "string",
+              "description": "Underlying reasoning or planning paradigm."
+            },
+            "multimodal_capability": {
+              "type": "array",
+              "description": "Types of input the agent can process.",
+              "items": {
+                "type": "string",
+                "enum": ["TEXT", "VOICE", "IMAGE", "VIDEO"]
+              }
+            }
+          }
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the agent and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this agent uses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent", "LLM Model", "Prompt Template", "Memory", "Knowledge Source", "Data Source", "Tool", "MCP Server", "Guardrail"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "llm_model": {
+      "type": "object",
+      "description": "LLM Model definition and attributes.",
+      "required": ["name", "version_number"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The foundational model used by the agent (e.g., gemini-2.5-flash)"
+        },
+        "version_number": {
+          "type": "string",
+          "description": "The version number of the LLM model"
+        }
+      }
+    },
+    "prompt_template": {
+      "type": "object",
+      "description": "Prompt Template definition and attributes.",
+      "required": ["identifier", "name", "description"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique identifier for the prompt template used to guide LLM behavior"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the prompt template used to guide LLM behavior (e.g., ABC-RAG-Standard-V2)"
+        },
+        "description": {
+          "type": "string",
+          "description": "The actual prompts used to guide LLM behavior"
+        }
+      }
+    },
+    "memory": {
+      "type": "object",
+      "description": "Memory definition and attributes.",
+      "required": ["identifier", "name", "type"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique identifier for the external system used for long-term data/vector storage"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the external system used for long-term data/vector storage (e.g., Atlas-HR-RAG-VectorDB)"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of memory storage used (e.g., VECTOR_DB, KEY_VALUE_STORE)"
+        }
+      }
+    },
+    "knowledge_source": {
+      "type": "object",
+      "description": "Knowledge Source definition and attributes.",
+      "required": ["identifier", "name", "access_mechanism"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A Unique ID for the knowledge source"
+        },
+        "name": {
+          "type": "string",
+          "description": "A list of all specific knowledge sources (e.g., databases, documents) the agent can access"
+        },
+        "access_mechanism": {
+          "type": "string",
+          "description": "The protocol or service used to retrieve knowledge (e.g., REST API, SQL connector)"
+        }
+      }
+    },
+    "data_source": {
+      "type": "object",
+      "description": "Data Source definition and attributes.",
+      "required": ["relationship_id", "source_object_id", "source_object_domain", "source_object_name", "source_object_type", "target_object_id", "target_object_domain", "target_object_name", "target_object_type", "access_level"],
+      "properties": {
+        "relationship_id": {
+          "type": "string",
+          "description": "A unique Relationship ID"
+        },
+        "parent_relationship_id": {
+          "type": "string",
+          "description": "Parent ID, if any"
+        },
+        "source_object_id": {
+          "type": "string",
+          "description": "Unique ID as in the Source system"
+        },
+        "source_object_domain": {
+          "type": "string",
+          "description": "Domain"
+        },
+        "source_object_name": {
+          "type": "string",
+          "description": "Object name"
+        },
+        "source_object_type": {
+          "type": "string",
+          "enum": ["Agent", "MCP Server", "Table", "Column", "View", "File", "Folder"],
+          "description": "Type of Source Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
+        },
+        "target_object_id": {
+          "type": "string",
+          "description": "Unique ID as in the Target system"
+        },
+        "target_object_domain": {
+          "type": "string",
+          "description": "Domain"
+        },
+        "target_object_name": {
+          "type": "string",
+          "description": "Object Name"
+        },
+        "target_object_type": {
+          "type": "string",
+          "description": "Type of Target Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
+        },
+        "access_level": {
+          "type": "string",
+          "description": "Access Level (READ, WRITE or DELETE)"
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "description": "Tool definition and attributes configured for the agent.",
+      "required": ["identifier", "name", "description"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique reference ID for the tool (e.g., PolicySearchTool)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the tool"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed explanation of the purpose and functionality"
+        },
+        "delegation_possible": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent can pass the request to another agent"
+        },
+        "allowed_delegates": {
+          "type": "array",
+          "description": "A list of Agent IDs, which the agent is allowed to delegate to",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_or_output": {
+          "type": "string",
+          "description": "Indicates whether it is an input or output parameter"
+        },
+        "parameter_name": {
+          "type": "string",
+          "description": "Name of the parameter"
+        },
+        "parameter_type": {
+          "type": "string",
+          "description": "Required type and format of the parameter"
+        },
+        "default_value": {
+          "type": "string",
+          "description": "Default value, if any"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the tool and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this tool uses",
+              "items": {
+                "type": "string",
+                "enum": ["Data Source", "Knowledge Source"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "mcp_server": {
+      "type": "object",
+      "description": "MCP Server definition and attributes.",
+      "required": ["name", "url", "version_number"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the MCP server"
+        },
+        "url": {
+          "type": "string",
+          "description": "The URL of the MCP server"
+        },
+        "version_number": {
+          "type": "string",
+          "description": "The version number of the MCP server"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the MCP server and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this MCP server uses",
+              "items": {
+                "type": "string",
+                "enum": ["Tool", "Data Source", "Knowledge Source", "Prompt Template"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "guardrail": {
+      "type": "object",
+      "description": "Guardrail definition and attributes used by the agent.",
+      "required": ["name", "description", "model"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the guardrail used by the agent (e.g., Prompt Injection, Toxic Content, Model Denial-of-Service)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the guardrail"
+        },
+        "model": {
+          "type": "string",
+          "description": "The name of the model or application that implements the guardrail"
+        }
+      }
+    },
+    "ai_use_case": {
+      "type": "object",
+      "description": "AI Use Case definition and attributes.",
+      "required": ["identifier", "name", "description", "owner", "function", "problem_statement", "priority", "status"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique reference ID for the AI use case"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the AI use case"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the AI use case"
+        },
+        "proposed_by": {
+          "type": "string",
+          "description": "Name of the person who proposed the AI use case"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Name of the business owner of the AI use case"
+        },
+        "function": {
+          "type": "string",
+          "description": "Name of the business function that owns the AI use case"
+        },
+        "problem_statement": {
+          "type": "string",
+          "description": "Detailed description of the business problem addressed by the AI use case"
+        },
+        "expected_benefits": {
+          "type": "string",
+          "description": "Description of the quantitative and qualitative benefits of the AI use case"
+        },
+        "priority": {
+          "type": "string",
+          "description": "Priority assigned to the AI use case (e.g., Critical, High, Medium, Low)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the AI use case (e.g., Assess, Authorize, Build, Test, Deploy, Completed, Cancelled)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the AI use case and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this AI use case uses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "application": {
+      "type": "object",
+      "description": "Application definition and attributes.",
+      "required": ["identifier", "name", "description", "business_criticality", "emergency_tier"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique reference ID for the application"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the application"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the application"
+        },
+        "business_criticality": {
+          "type": "string",
+          "description": "The criticality of the application to the operation of the business (e.g., Low, Medium, High)"
+        },
+        "emergency_tier": {
+          "type": "string",
+          "description": "The impact to the business if the application is inoperable (e.g., Non-Critical, Business Critical, Mission Critical)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the application and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this application uses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "business_process": {
+      "type": "object",
+      "description": "Business Process definition and attributes.",
+      "required": ["identifier", "name", "description", "business_criticality"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "The ID of the business process that uses the agent"
+        },
+        "name": {
+          "type": "string",
+          "description": "The human-readable name of the business process"
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the business process, its significance and relevance"
+        },
+        "business_criticality": {
+          "type": "string",
+          "description": "The criticality of the process to the operation of the business (e.g., Low, Medium, High)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the business process and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this business process uses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "regulation": {
+      "type": "object",
+      "description": "Regulation definition and attributes.",
+      "required": ["name", "regulatoryAuthority", "jurisdiction"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the regulation (e.g., EU AI Act)"
+        },
+        "regulatory_authority": {
+          "type": "string",
+          "description": "The name of the regulatory authority (e.g., European Union)"
+        },
+        "jurisdiction": {
+          "type": "string",
+          "description": "The jurisdiction of the regulation (e.g., European Union, California)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the regulation and other objects",
+          "properties": {
+            "governs": {
+              "type": "array",
+              "description": "Objects that this regulation governs",
+              "items": {
+                "type": "string",
+                "enum": ["AI Use Case", "Risk Assessment"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "risk_assessment": {
+      "type": "object",
+      "description": "Risk Assessment definition and attributes.",
+      "required": ["identifier", "name", "assessor", "date", "risk_score", "state"],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "The ID of the risk assessment"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the risk assessment (e.g., Agent-02-2Q26)"
+        },
+        "assessor": {
+          "type": "string",
+          "description": "The name of the assessor"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date of the risk assessment"
+        },
+        "risk_score": {
+          "type": "number",
+          "description": "The risk score assigned to the subject (application, business process, AI use case, agent) of the risk assessment"
+        },
+        "state": {
+          "type": "string",
+          "description": "Status of the risk assessment (e.g., Ready to Take, In Progress, Completed, Cancelled)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the risk assessment and other objects",
+          "properties": {
+            "assesses": {
+              "type": "array",
+              "description": "Objects that this risk assessment assesses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent", "AI Use Case", "Application", "Business Process"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
