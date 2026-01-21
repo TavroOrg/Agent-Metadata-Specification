@@ -300,7 +300,7 @@
               "description": "Objects that this tool uses",
               "items": {
                 "type": "string",
-                "enum": ["Data Source", "Knowledge Source"]
+                "enum": ["Tool", "Agent", "MCP Server", "Data Source", "Knowledge Source"]
               }
             }
           }
@@ -333,7 +333,7 @@
               "description": "Objects that this MCP server uses",
               "items": {
                 "type": "string",
-                "enum": ["Tool", "Data Source", "Knowledge Source", "Prompt Template"]
+                "enum": ["Agent", "Tool", "Data Source", "Knowledge Source", "Prompt Template"]
               }
             }
           }
