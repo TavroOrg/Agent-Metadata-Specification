@@ -576,6 +576,67 @@
           }
         }
       }
+    },
+    "agent_metadata_medical_device": {
+      "type": "object",
+      "description": "Agent metadata definition for medical devices.",
+      "required": ["agent_id", "name", "is_medical_device", "fda_device_classification", "uses_pii", "uses_phi", "physical_state"],
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "description": "A unique, permanent identifier for the agent"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the agent (e.g., Sepsis ImmunoScore)"
+        },
+        "is_medical_device": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent constitutes a medical device"
+        },
+        "universal_device_identifier": {
+          "type": "object",
+          "description": "Universal Device Identifier (UDI) information"
+        },
+        "aims_number": {
+          "type": "string",
+          "description": "Asset Information Management System (AIMS) Number"
+        },
+        "fda_device_classification": {
+          "type": "string",
+          "description": "Software device to aid in the prediction or diagnosis of sepsis "
+        },
+        "fda_device_classification_description": {
+          "type": "string",
+          "description": "Detailed description of the FDA classification and intended use of the device"
+        },
+        "uses_pii": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII)"
+        },
+        "uses_phi": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Protected Health Information (PHI)"
+        },
+        "physical_state": {
+          "type": "string",
+          "description": "Physical state of the medical device (e.g., Software Device)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the medical device asset and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this medical device uses",
+              "items": {
+                "type": "string",
+                "enum": ["Agent"]
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
