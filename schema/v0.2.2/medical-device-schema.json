@@ -7,105 +7,48 @@
   "properties": {
     "agent": {
       "type": "object",
-      "description": "Core AI Agent definition.",
-      "required": ["identification", "configuration"],
+      "description": "Agent metadata definition for medical devices.",
+      "required": ["agent_id", "name", "is_medical_device", "fda_device_classification", "uses_pii", "uses_phi", "physical_state"],
       "properties": {
-        "identification": {
-          "type": "object",
-          "description": "Core identifying, descriptive, and governance details of the agent.",
-          "required": ["agent_id", "title", "description", "owner", "instruction"],
-          "properties": {
-            "agent_id": {
-              "type": "string",
-              "description": "A unique, permanent identifier for the agent (e.g., HR-POL-003)"
-            },
-            "agent_version": {
-              "type": "string",
-              "description": "The current version number of the agent's configuration and logic"
-            },
-            "title": {
-              "type": "string",
-              "description": "The human-readable name of the agent (e.g., Internal HR Policy Assistant)"
-            },
-            "description": {
-              "type": "string",
-              "description": "A concise summary of the agent's purpose, capabilities, and target user"
-            },
-            "goal_orientation": {
-              "type": "string",
-              "description": "The specific objective or success metric the agent is designed to achieve"
-            },
-            "role": {
-              "type": "string",
-              "description": "The defined character or communication style that governs its interaction"
-            },
-            "owner": {
-              "type": "string",
-              "description": "The team or department responsible for the agent's maintenance and cost"
-            },
-            "environment": {
-              "type": "string",
-              "description": "The deployment environment (e.g., DEV, UAT, PROD)"
-            },
-            "tags": {
-              "type": "array",
-              "description": "A list of keywords for search and categorization (e.g., HR, policy, internal)",
-              "items": {
-                "type": "string"
-              }
-            },
-            "governance_status": {
-              "type": "string",
-              "description": "The current governance lifecycle status (e.g., DRAFT, APPROVED, DECOMMISSIONED)"
-            },
-            "reviewer": {
-              "type": "string",
-              "description": "Name of the person who approved the latest governance status."
-            }
-          }
+        "agent_id": {
+          "type": "string",
+          "description": "A unique, permanent identifier for the agent"
         },
-        "configuration": {
+        "name": {
+          "type": "string",
+          "description": "Name of the agent (e.g., Sepsis ImmunoScore)"
+        },
+        "is_medical_device": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent constitutes a medical device"
+        },
+        "universal_device_identifier": {
           "type": "object",
-          "description": "Configuration details governing agent behavior and capabilities.",
-          "required": [],
-          "properties": {
-            "prompt_template_reference": {
-              "type": "string",
-              "description": "ID of the prompt template used to guide LLM behavior."
-            },
-            "access_scope": {
-              "type": "string",
-              "description": "Overall data access level of the agent."
-            },
-            "memory_storage_reference": {
-              "type": "string",
-              "description": "Agent memory and storage configuration."
-            },
-            "memory_type": {
-              "type": "string",
-              "description": "Type of memory storage used."
-            },
-            "data_freshness_policy": {
-              "type": "string",
-              "description": "Maximum acceptable age of cached data."
-            },
-            "autonomy_level": {
-              "type": "string",
-              "description": "Degree of independent action without human approval."
-            },
-            "reasoning_model": {
-              "type": "string",
-              "description": "Underlying reasoning or planning paradigm."
-            },
-            "multimodal_capability": {
-              "type": "array",
-              "description": "Types of input the agent can process.",
-              "items": {
-                "type": "string",
-                "enum": ["TEXT", "VOICE", "IMAGE", "VIDEO"]
-              }
-            }
-          }
+          "description": "Universal Device Identifier (UDI) information"
+        },
+        "aims_number": {
+          "type": "string",
+          "description": "Asset Information Management System (AIMS) Number"
+        },
+        "fda_device_classification": {
+          "type": "string",
+          "description": "Software device to aid in the prediction or diagnosis of sepsis "
+        },
+        "fda_device_classification_description": {
+          "type": "string",
+          "description": "Detailed description of the FDA classification and intended use of the device"
+        },
+        "uses_pii": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII)"
+        },
+        "uses_phi": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Protected Health Information (PHI)"
+        },
+        "physical_state": {
+          "type": "string",
+          "description": "Physical state of the medical device (e.g., Software Device)"
         },
         "relations": {
           "type": "object",
