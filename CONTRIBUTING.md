@@ -33,6 +33,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Collibra</td>
         </tr>
         <tr>
+            <td>Joe DeLuca</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
             <td>Tony DiPerna</td>
             <td>BankUnited</td>
         </tr>
@@ -69,11 +73,19 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Su Rayburn</td>
+            <td>Delta Community Credit Union</td>
+        </tr>
+        <tr>
             <td><a href="https://github.com/kdshah2205" target="_blank">Khushboo Shah</td>
             <td>Tavro AI</td>
         </tr>
         <tr>
             <td>Doug Shannon</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
+            <td>Bryan Swann</td>
             <td>Independent Contributor</td>
         </tr>
     </tbody>
