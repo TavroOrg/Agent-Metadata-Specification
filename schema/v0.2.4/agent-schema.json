@@ -577,7 +577,7 @@
         }
       }
     },
-    "agent_metadata_medical_device": {
+    "medical_device": {
       "type": "object",
       "description": "Agent metadata definition for medical devices.",
       "required": ["agent_id", "name", "is_medical_device", "fda_device_classification", "uses_pii", "uses_phi", "physical_state"],
