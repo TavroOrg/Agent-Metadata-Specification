@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/schemas/medical-device.schema.json",
+    "title": "Medical Device",
+    "description": "Agent metadata definition for medical devices.",
+    "type": "object",
+    "required": [
+        "agent_id",
+        "name",
+        "is_medical_device",
+        "fda_device_classification",
+        "uses_pii",
+        "uses_phi",
+        "physical_state"
+    ],
+    "properties": {
+        "agent_id": {
+            "type": "string",
+            "description": "A unique, permanent identifier for the agent"
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the agent (e.g., Sepsis ImmunoScore)"
+        },
+        "is_medical_device": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent constitutes a medical device"
+        },
+        "universal_device_identifier": {
+            "type": "object",
+            "description": "A unique numeric or alphanumeric code that generally consists of the following: Device identifier (DI), a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device; Production identifier (PI), a conditional, variable portion of a UDI that identifies one or more of the following when included on the label of a device: Lot or batch number within which a device was manufactured, Serial number of a specific device, Expiration date of a specific device, Date a specific device was manufactured, Distinct identification code required for a human cell, tissue, or cellular and tissue-based product regulated as a device"
+        },
+        "cmms_number": {
+            "type": "string",
+            "description": "Computerized Maintenance Management System (CMMS) Number ex. Asset Information Management System (AIMS) Number"
+        },
+        "fda_device_classification": {
+            "type": "string",
+            "description": "Software device to aid in the prediction or diagnosis of sepsis"
+        },
+        "fda_device_classification_description": {
+            "type": "string",
+            "description": "Description of the FDA classification. For example: A software device to aid in the prediction or diagnosis of sepsis uses advanced algorithms to analyze patient specific data to aid health care providers in the prediction and/or diagnosis of sepsis. The device is intended for adjunctive use and is not intended to be used as the sole determining factor in assessing a patient's sepsis status. The device may contain alarms that alert the care provider of the patient's status. The device is not intended to monitor response to treatment in patients being treated for sepsis."
+        },
+        "uses_pii": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII)"
+        },
+        "uses_phi": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent uses Protected Health Information (PHI)"
+        },
+        "physical_state": {
+            "type": "string",
+            "description": "Physical state of the medical device (e.g., Software Device)"
+        },
+        "relations": {
+            "type": "object",
+            "description": "Relationships between the medical device asset and other objects",
+            "properties": {
+                "uses": {
+                    "type": "array",
+                    "description": "Objects that this medical device uses",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Agent"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}
