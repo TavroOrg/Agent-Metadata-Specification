@@ -20,7 +20,8 @@
             "agent_id",
             "name",
             "description",
-            "owner"
+            "owner",
+            "instruction"
           ],
           "properties": {
             "agent_id": {
@@ -61,6 +62,10 @@
             "role": {
               "type": "string",
               "description": "The defined character or communication style that governs its interaction"
+            },
+            "instruction": {
+              "type": "string",
+              "description": "Detailed instructions or guidelines for the agent's behavior, decision-making, and interactions"
             },
             "owner": {
               "type": "string",
