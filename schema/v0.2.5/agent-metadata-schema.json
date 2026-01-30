@@ -237,31 +237,27 @@
           "properties": {
             "industry": {
               "type": "string",
-              "industry_json_schema": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/v0.2.5/schema/v0.2.5/industry/JSON/medical-device-schema.json",
               "description": "Industry specific entities that this agent interacts with",
               "items": {
-                "type": "string",
-                "enum": [
-                  "Medical Device Manufacturer",
-                  "Banking",
-                  "Investment Management",
-                  "Insurance",
-                  "Healthcare Provider",
-                  "Healthcare Payer",
-                  "Retail",
-                  "E-commerce",
-                  "Logistics",
-                  "Manufacturing",
-                  "Energy",
-                  "Utilities",
-                  "Telecommunications",
-                  "Media",
-                  "Entertainment",
-                  "Education",
-                  "Government",
-                  "Non-profit",
-                  "Other"
-                ]
+                "Medical Device Manufacturer": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/v0.2.5/schema/v0.2.5/industry/JSON/medical-device-manufacturer-schema.json",
+                "Banking": "",
+                "Investment Management": "",
+                "Insurance": "",
+                "Healthcare Provider": "",
+                "Healthcare Payer": "",
+                "Retail": "",
+                "E-commerce": "",
+                "Logistics": "",
+                "Manufacturing": "",
+                "Energy": "",
+                "Utilities": "",
+                "Telecommunications": "",
+                "Media": "",
+                "Entertainment": "",
+                "Education": "",
+                "Government": "",
+                "Non-profit": "",
+                "Other": ""
               }
             }
           }
