@@ -2,4 +2,4 @@
 
 AI agents may be integrated with standalone software programs or with physical hardware. The U.S. Food & Drug Administration (FDA) defines Software as a Medical Device broadly to include software that allows a smartphone to view images obtained from a magnetic resonance imaging (MRI) medical device for diagnostic purposes and Computer-Aided Detection (CAD) software that performs image post-processing to help detect breast cancer. Software as a Medical Device may be interfaced with other medical devices, including hardware medical devices, and other software as a medical device software, as well as general purpose software.
 
-Please refer to the PDF and JSON schema for enhancements for the Medical Device industry.
+Please refer to the [PDF](/assets/Publications/Agent%20Metadata%20Specification%20V0.2.5.pdf) and [JSON schema](JSON/medical-device-schema.json) for enhancements for the Medical Device industry.
