@@ -1,6 +1,5 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://tavroorg.github.io/Agent-Metadata-Specification/schema/v0.2.5/industry/JSON/medical-device-manufacturer-schema.json",
     "title": "Medical Device Manufacturer Agent Schema",
     "description": "Agent metadata definition for Medical Device Manufacturers",
     "type": "object",
