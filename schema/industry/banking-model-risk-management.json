@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://tavroorg.github.io/Agent-Metadata-Specification/schema/v0.2.5/industry/banking-model-risk-management.json",
+    "title": "Banking Model Risk Management Agent Schema",
+    "description": "Agent metadata definition for Model Risk Management in Banking",
+    "type": "object",
+    "required": [],
+    "properties": {
+        "identification": {
+            "type": "object",
+            "description": "Identification attributes for the model",
+            "required": [
+                "name",
+                "owner",
+                "department_executive",
+                "description",
+                "vendor_or_in_house",
+                "using_departments",
+                "status"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the model that uses the agent"
+                },
+                "owner": {
+                    "type": "string",
+                    "description": "Name of the owner of the model that uses the agent"
+                },
+                "department_executive": {
+                    "type": "string",
+                    "description": "Name of the department executive of the model that uses the agent"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the model that uses the agent"
+                },
+                "vendor_or_in_house": {
+                    "type": "string",
+                    "description": "Whether the model is offered by a vendor or built in-house"
+                },
+                "using_departments": {
+                    "type": "array",
+                    "description": "Names of the departments that will be using the model",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Current lifecycle of the model (e.g., Ideation, Development, Production, Retired)"
+                }
+            }
+        },
+        "lineage": {
+            "type": "object",
+            "description": "Lineage attributes for the model",
+            "properties": {
+                "inputs": {
+                    "type": "array",
+                    "description": "List of inputs for the model",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "data_sources": {
+                    "type": "array",
+                    "description": "List of data sources for the model",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "users": {
+                    "type": "array",
+                    "description": "Types of users for the model",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "outputs": {
+                    "type": "array",
+                    "description": "List of outputs for the model",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "destinations": {
+                    "type": "array",
+                    "description": "List of destinations for the model",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "compliance": {
+            "type": "object",
+            "description": "Compliance attributes for the model",
+            "properties": {
+                "training": {
+                    "type": "boolean",
+                    "description": "Have users completed required American Bankers Association (ABA) training on use of AI in models?"
+                }
+            }
+        },
+        "model_validation": {
+            "type": "object",
+            "description": "Model validation attributes",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of last model validation"
+                },
+                "evidence": {
+                    "type": "string",
+                    "description": "Documentary evidence of model validation"
+                }
+            }
+        },
+        "recertification": {
+            "type": "object",
+            "description": "Recertification attributes for the model",
+            "properties": {
+                "identification": {
+                    "type": "string",
+                    "description": "Have model's use case remained the same? If not, what changed?"
+                },
+                "lineage_inputs_data_sources": {
+                    "type": "string",
+                    "description": "Have model's inputs and data sources remained the same? If not, what changed?"
+                },
+                "lineage_outputs_destinations": {
+                    "type": "string",
+                    "description": "Have model's outputs and destinations remained the same? If not, what changed?"
+                },
+                "lineage_users": {
+                    "type": "string",
+                    "description": "Have model's users remained the same? If not, what changed?"
+                },
+                "processing_components": {
+                    "type": "string",
+                    "description": "Have model's internal processing components and algorithms remained the same? If not, what changed?"
+                },
+                "compliance": {
+                    "type": "boolean",
+                    "description": "Have users completed required training on use of AI in models?"
+                },
+                "risk_assessment": {
+                    "type": "string",
+                    "description": "Has a comprehensive risk assessment been conducted on any use of AI? If so, please attach results."
+                }
+            }
+        },
+        "relations": {
+            "type": "object",
+            "description": "Relationships between the model and other objects",
+            "properties": {
+                "uses": {
+                    "type": "array",
+                    "description": "Objects that this model uses",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Agent"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

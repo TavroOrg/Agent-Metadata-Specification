@@ -239,8 +239,8 @@
               "type": "string",
               "description": "Industry specific entities that this agent interacts with",
               "items": {
-                "Medical Device Manufacturer": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/v0.2.5/schema/v0.2.5/industry/JSON/medical-device-manufacturer-schema.json",
-                "Banking": "",
+                "Medical Device Manufacturer": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/schema/v0.2.5/industry/JSON/medical-device-manufacturer-schema.json",
+                "Banking Model Risk Management": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/v0.2.5/schema/v0.2.5/industry/JSON/banking-model-risk-management.json",
                 "Investment Management": "",
                 "Insurance": "",
                 "Healthcare Provider": "",
