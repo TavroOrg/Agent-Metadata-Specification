@@ -185,7 +185,7 @@ Table 3 summarizes regulations that impact AI agents within model risk managemen
     </tr>
     <tr>
       <td>U.S. Federal Reserve</td>
-      <td><a href="" target="_blank">SR 12-7: Supervisory Guidance on Stress Testing for Banking Organizations with More Than $10 Billion in Total Consolidated Assets</a></td>
+      <td><a href="https://www.federalreserve.gov/supervisionreg/srletters/sr1207.htm" target="_blank">SR 12-7: Supervisory Guidance on Stress Testing for Banking Organizations with More Than $10 Billion in Total Consolidated Assets</a></td>
     </tr>
   </tbody>
 </table>
