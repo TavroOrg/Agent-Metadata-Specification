@@ -1,0 +1,168 @@
+{
+    "capabilities": {
+        "streaming": false
+    },
+    "defaultInputModes": [
+        "text"
+    ],
+    "defaultOutputModes": [
+        "text"
+    ],
+    "description": "An agent that calls external tools (LexisNexis, Socure) to verify identity and detect synthetic ID patterns",
+    "name": "Fraud Detective",
+    "preferredTransport": "JSONRPC",
+    "protocolVersion": "0.3.0",
+    "skills": [
+        {
+            "description": null,
+            "examples": [],
+            "id": null,
+            "name": null,
+            "tags": []
+        }
+    ],
+    "provider": null,
+    "security_schemes": null,
+    "security": null,
+    "signatures": null,
+    "supports_authenticated_extended_card": true,
+    "url": "http://localhost:9999/",
+    "version": "1.0.1",
+    "documentation_url": null,
+    "icon_url": null,
+    "additional_interfaces": null,
+    "preferred_transport": null,
+    "a2a_protocol_version": null,
+    "identification": {
+        "agent_id": "6cbb5c97931ab610e3a5fcbe9903d640",
+        "goal_orientation": "Partial (0.5)",
+        "role": null,
+        "instruction": "### Role You are the 'Identity Integrity Guardian,' an expert fraud detection agent. Your goal is to verify user identities and aggressively detect 'Synthetic Identities' (Frankenstein IDs created by combining real and fake data). ### Core Responsibilities 1. Collect PII (Personally Identifiable Information) from the user respectfully. 2. Verify this data against external bureaus (LexisNexis / Socure) using your available tools. 3. Analyze the results for 'Synthetic Patterns' (defined below). 4. Output a clear 'Pass,' 'Review,' or 'Reject' recommendation. ### Operational Constraints - **Privacy:** Never repeat the user's full SSN or Date of Birth in the chat output. Mask them (e.g., ***-**-1234). - **Tone:** Professional, secure, and objective. Do not accuse the user of fraud; use terms like 'verification discrepancy.' - **Tool Usage:** You usually need to run BOTH the Identity Check and the Risk Score tools to get a complete picture. ### Synthetic Identity Detection Logic (Internal Monologue) When analyzing tool outputs, look for these specific red flags: - **SSN Randomization:** The SSN was issued after 2011 but does not match the credit file creation date. - **'Thin' File:** The identity exists but has very little history (less than 2 years) despite the user claiming to be older. - **Address Manipulations:** The address is a drop box, commercial mail receiving agency (CMRA), or high-risk location. - **Velocity:** The same phone number or email is associated with multiple different names in the bureau data. ### Decision Matrix - **PASS:** Name, Address, and SSN match sources; Risk Score < 10; No synthetic flags. - **REVIEW:** Identity matches, but phone/email is recent or prepaid; Risk Score 10-50. - **REJECT:** SSN belongs to a deceased person; Address is non-residential; SSN does not match Name; Risk Score > 50.",
+        "owner": "John doe",
+        "environment": "Development",
+        "tags": null,
+        "governance_status": null,
+        "reviewer": null
+    },
+    "configuration": {
+        "access_scope": null,
+        "memory_type": null,
+        "data_freshness_policy": null,
+        "autonomy_level": "Partial (0.5)",
+        "reasoning_model": null
+    },
+    "llm_model": {
+        "name": null,
+        "version_number": null
+    },
+    "prompt_template": {
+        "identifier": null,
+        "name": null,
+        "description": null
+    },
+    "memory": {
+        "identifier": null,
+        "name": null,
+        "type": null
+    },
+    "knowledge_source": {
+        "identifier": null,
+        "name": null,
+        "access_mechanism": null
+    },
+    "data_source": [
+        {
+            "relationship_id": null,
+            "parent_relationship_id": null,
+            "source_object_id": "6cbb5c97931ab610e3a5fcbe9903d640",
+            "source_object_domain": null,
+            "source_object_name": "Fraud Detective",
+            "source_object_type": "Agent",
+            "target_object_id": null,
+            "target_object_domain": null,
+            "target_object_name": "action_lexisnexis_verify",
+            "target_object_type": "Tool",
+            "access_level": null
+        },
+        {
+            "relationship_id": null,
+            "parent_relationship_id": null,
+            "source_object_id": "6cbb5c97931ab610e3a5fcbe9903d640",
+            "source_object_domain": null,
+            "source_object_name": "Fraud Detective",
+            "source_object_type": "Agent",
+            "target_object_id": null,
+            "target_object_domain": null,
+            "target_object_name": "action_socure_synthetic_score",
+            "target_object_type": "Tool",
+            "access_level": null
+        }
+    ],
+    "tool": [
+        {
+            "name": "action_lexisnexis_verify",
+            "description": "Use this tool to validate 'static' identity data. It checks if the Name, Address, SSN, and DOB provided by the user exist and match in public records. It returns a match status (Match/No Match) and warning codes for deceased SSNs or invalid addresses. Input requirements: FirstName, LastName, StreetAddress, SSN, DOB.",
+            "delegation_possible": null,
+            "allowed_delegates": null,
+            "input_or_output": null,
+            "parameter_name": null,
+            "parameter_type": null,
+            "default_value": null
+        },
+        {
+            "name": "action_socure_synthetic_score",
+            "description": "Use this tool specifically to detect Synthetic Fraud and calculate a fraud risk score. It analyzes the behavior, email age, phone line type (VoIP/Prepaid), and digital footprint. It returns a 'sigma_score' (0-100) and specific 'reason_codes' regarding the likelihood of the ID being fabricated. Call this AFTER collecting the user's PII.",
+            "delegation_possible": null,
+            "allowed_delegates": null,
+            "input_or_output": null,
+            "parameter_name": null,
+            "parameter_type": null,
+            "default_value": null
+        }
+    ],
+    "mcp_server": {
+        "name": null,
+        "url": null,
+        "version_number": null
+    },
+    "guardrail": {
+        "name": null,
+        "description": null,
+        "model": null
+    },
+    "ai_use_case": {
+        "identifier": null,
+        "name": null,
+        "description": null,
+        "proposed_by": null,
+        "owner": null,
+        "function": null,
+        "problem_statement": null
+    },
+    "application": {
+        "identifier": null,
+        "name": null,
+        "description": null,
+        "business_criticality": null,
+        "emergency_tier": null
+    },
+    "business_process": {
+        "identifier": null,
+        "name": null,
+        "description": null,
+        "business_criticality": null
+    },
+    "regulation": {
+        "name": null,
+        "regulatory_authority": null,
+        "jurisdiction": null
+    },
+    "risk_assessment": {
+        "identifier": "TAVAGR0003276",
+        "name": "Fraud Detective_Assessment_2026-01-18",
+        "assessor": "ankush jain",
+        "date": "2026-02-03 05:00:58",
+        "risk_score": null,
+        "state": "Completed"
+    }
+}
