@@ -1,0 +1,36 @@
+{
+    "capabilities": {
+        "streaming": false
+    },
+    "defaultInputModes": [
+        "text"
+    ],
+    "defaultOutputModes": [
+        "text"
+    ],
+    "description": "An agent that calls external tools (LexisNexis, Socure) to verify identity and detect synthetic ID patterns",
+    "name": "Fraud Detective",
+    "preferredTransport": "JSONRPC",
+    "protocolVersion": "0.3.0",
+    "skills": [
+        {
+            "description": null,
+            "examples": [],
+            "id": null,
+            "name": null,
+            "tags": []
+        }
+    ],
+    "provider": null,
+    "security_schemes": null,
+    "security": null,
+    "signatures": null,
+    "supports_authenticated_extended_card": true,
+    "url": "http://localhost:9999/",
+    "version": "1.0.1",
+    "documentation_url": null,
+    "icon_url": null,
+    "additional_interfaces": null,
+    "preferred_transport": null,
+    "a2a_protocol_version": null
+}

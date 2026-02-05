@@ -4,7 +4,13 @@
     "title": "Banking Model Risk Management Agent Schema",
     "description": "Agent metadata definition for Model Risk Management in Banking",
     "type": "object",
-    "required": [],
+    "required": [
+        "identification",
+        "lineage",
+        "compliance",
+        "model_validation",
+        "recertification"
+    ],
     "properties": {
         "identification": {
             "type": "object",
