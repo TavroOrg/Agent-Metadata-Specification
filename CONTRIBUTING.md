@@ -73,6 +73,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Arpan Patel</td>
+            <td>Delta Community Credit Union</td>
+        </tr>
+        <tr>
             <td>Su Rayburn</td>
             <td>Delta Community Credit Union</td>
         </tr>
@@ -87,10 +91,6 @@ The following individuals are acknowledged for their significant contributions t
         <tr>
             <td>Bryan Swann</td>
             <td>Independent Contributor</td>
-        </tr>
-        <tr>
-            <td>Arpan Patel</td>
-            <td>Delta Community Credit Union</td>
         </tr>
         <tr>
             <td>John Yelle</td>
