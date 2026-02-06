@@ -157,6 +157,51 @@
                 }
             }
         },
+        "black_box_risk_assessment": {
+            "type": "object",
+            "description": "Risk assessment attributes for black box third-party models and embedded agents",
+            "properties": {
+                "model": {
+                    "type": "string",
+                    "description": "Name of the model"
+                },
+                "provider": {
+                    "type": "string",
+                    "description": "Name of the model provider"
+                },
+                "agent": {
+                    "type": "string",
+                    "description": "Name of the agent used by the model"
+                },
+                "agent_provider": {
+                    "type": "string",
+                    "description": "Name of the agent provider used by the model"
+                },
+                "llm": {
+                    "type": "string",
+                    "description": "Name and LLM version used by the agent"
+                },
+                "inputs": {
+                    "type": "array",
+                    "description": "List of inputs used by the agent",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "data_usage": {
+                    "type": "boolean",
+                    "description": "Will the provider use the bank's data to train its models and agents?"
+                },
+                "bias_testing": {
+                    "type": "string",
+                    "description": "Documentary evidence regarding bias testing of the model and agents (this is important for compliance purposes)"
+                },
+                "third_party_risk_assessment": {
+                    "type": "string",
+                    "description": "Results of latest Third-Party Risk Assessment on the Model / Agent Provider"
+                }
+            }
+        },
         "relations": {
             "type": "object",
             "description": "Relationships between the model and other objects",

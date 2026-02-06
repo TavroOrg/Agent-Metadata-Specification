@@ -1,6 +1,8 @@
-# Updates to Agent Metadata for the Medical Device Industry
+# Agent Metadata for the Medical Device Industry
 
 ## Introduction
+
+The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). This section provides additional attributes that apply to the Medical Device Industry.
 
 AI agents may be integrated with standalone software programs or with physical hardware. The U.S. Food & Drug Administration (FDA) defines [Software as a Medical Device](https://www.fda.gov/medical-devices/software-medical-device-samd/what-are-examples-software-medical-device) broadly to include software that allows a smartphone to view images obtained from a magnetic resonance imaging (MRI) medical device for diagnostic purposes and Computer-Aided Detection (CAD) software that performs image post-processing to help detect breast cancer. Software as a Medical Device may be interfaced with other medical devices, including hardware medical devices, and other software as a medical device software, as well as general purpose software.
 
@@ -136,7 +138,7 @@ Table 3 provides a sample of regulations that impact AI agents in the medical de
     </tr>
     <tr>
       <td>IMDRF Software as a Medical Device (SaMD) Working Group</td>
-      <td>"Software as a Medical Device": Possible Framework for Risk Categorization and Corresponding Considerations, September 18, 2014</td>
+      <td>"Software as a Medical Device": Possible Framework for Risk Categorization and Corresponding Considerations, September 18, 2014<sup>1</sup></td>
     </tr>
   </tbody>
 </table>
@@ -181,3 +183,8 @@ Please refer to the [JSON schema](../schema/industry/medical-device-manufacturer
 [Joe DeLuca](https://www.linkedin.com/in/joseph-deluca-0717411b/)
 
 [Mike Jennings](https://www.linkedin.com/in/mikefjennings/)
+
+---
+
+<p><sup>1</sup>IMDRF, "Software as a Medical Device": Possible Framework for Risk Categorization and Corresponding Considerations, <a href="https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf" target="_blank">https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf</a>.
+</p>

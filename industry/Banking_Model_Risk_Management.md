@@ -1,10 +1,13 @@
 # Agent Metadata for Model Risk Management in Banking
 
 ## Introduction
+
+The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). This section provides additional attributes that apply to Model Risk Management in Banking.
+
 This section is only a stub and will be built out based on future input from industry leaders. Because AI agents are increasingly being used for Model Risk Management in banking, their metadata needs to be captured and their risk assessed appropriately.
 
 ## Conceptual Model Updates
-Figure 1 shows key areas where the overall agent data model needs to be customized for model risk management in banking.
+Banks use models for multiple use cases including credit risk, liquidity risk, and operational risk. These models may be Excel files, AI/ML models, or third-party models. These models may increasingly use agents. Figure 1 shows key areas where the overall agent data model needs to be customized for model risk management in banking.
 
 <p align="center">
   <img src="../assets/images/Banking Model Risk Management.png" alt="Banking Model Risk Management" width="300" >
@@ -140,8 +143,62 @@ Table 1 summarizes the attributes of a model that are specific to model risk man
   <em>Table 1: Agent attributes for the model risk management in banking</em>
 </p>
 
+## Black Box Nature of Agents in Third-Party Models Present Unique Challenges for Agent Risk Assessments
+
+Banks generally have robust model governance methodologies for in-house models. These methodologies include rigorous bias testing, back testing, and the use of challenger models. However, banks are often confronted with third-party models with embedded AI agents that may not provide clear line-of-sight for risk management purposes. Table 2 summarizes key attributes that need to be considered in risk assessments for third-party models that use AI agents.
+
+<table>
+  <thead>
+    <tr>
+      <th><b>Attribute</b></th>
+      <th><b>Description</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Model</td>
+      <td>Name of the model</td>
+    </tr>
+    <tr>
+      <td>Provider</td>
+      <td>Name of the model provider</td>
+    </tr>
+    <tr>
+      <td>Agent</td>
+      <td>Name of the agent used by the model</td>
+    </tr>
+    <tr>
+      <td>Agent Provider</td>
+      <td>Name of the agent provider used by the model</td>
+    </tr>
+    <tr>
+      <td>LLM</td>
+      <td>Name and LLM version used by the agent</td>
+    </tr>
+    <tr>
+      <td>Inputs</td>
+      <td>List of inputs used by the agent</td>
+    </tr>
+    <tr>
+      <td>Data Usage</td>
+      <td>Will the provider use the bank's data to train its models and agents?</td>
+    </tr>
+    <tr>
+      <td>Bias Testing</td>
+      <td>Documentary evidence regarding bias testing of the model and agents (this is important for compliance purposes)</td>
+    </tr>
+    <tr>
+      <td>Third-Party Risk Assessment</td>
+      <td>Results of latest Third-Party Risk Assessment on the Model / Agent Provider</td>
+    </tr>
+  </tbody>
+</table>
+<p align="center">
+  <em>Table 2: Risk assessment attributes for model and agent</em>
+</p>
+
 ## Additional Relations
-Table 2 summarizes the additional relations for model risk management in banking.
+Table 3 summarizes the additional relations for model risk management in banking.
 
 <table>
   <thead>
@@ -165,11 +222,11 @@ Table 2 summarizes the additional relations for model risk management in banking
   </tbody>
 </table>
 <p align="center">
-  <em>Table 2: Additional relations for model risk management in banking</em>
+  <em>Table 3: Additional relations for model risk management in banking</em>
 </p>
 
 ## Sample Regulations
-Table 3 summarizes regulations that impact AI agents within model risk management in banking.
+Table 4 summarizes regulations that impact AI agents within model risk management in banking.
 
 <table>
   <thead>
@@ -190,7 +247,7 @@ Table 3 summarizes regulations that impact AI agents within model risk managemen
   </tbody>
 </table>
 <p align="center">
-  <em>Table 3: Regulations impacting model risk management in banking</em>
+  <em>Table 4: Regulations impacting model risk management in banking</em>
 </p>
 
 ## JSON Schema
@@ -198,3 +255,7 @@ Please refer to the [JSON schema](../schema/industry/banking-model-risk-manageme
 
 ## Contributors
 [Antonio DiPerna, BankUnited](https://www.linkedin.com/in/antonio-di-perna-851153/)
+
+[Arpan Patel, Delta Community Credit Union](https://www.linkedin.com/in/arpanpatel7/)
+
+[Dr. Su Rayburn, Delta Community Credit Union](https://www.linkedin.com/in/surayburn/)

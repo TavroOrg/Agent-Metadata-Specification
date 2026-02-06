@@ -89,6 +89,10 @@
             "reviewer": {
               "type": "string",
               "description": "Name of the person who approved the latest governance status"
+            },
+            "cost_center": {
+              "type": "string",
+              "description": "Name of the department for cost containment and chargeback"
             }
           }
         },
@@ -493,6 +497,18 @@
         "access_level": {
           "type": "string",
           "description": "Access Level (READ, WRITE or DELETE)"
+        },
+        "uses_pii": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII) from the data source"
+        },
+        "uses_phi": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Protected Health Information (PHI) from the data source"
+        },
+        "uses_pci": {
+          "type": "boolean",
+          "description": "Boolean indicating if the agent uses Payment Card Industry (PCI) data from the data source"
         }
       }
     },
