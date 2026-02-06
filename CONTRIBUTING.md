@@ -88,6 +88,14 @@ The following individuals are acknowledged for their significant contributions t
             <td>Bryan Swann</td>
             <td>Independent Contributor</td>
         </tr>
+        <tr>
+            <td>Arpan Patel</td>
+            <td>Delta Community Credit Union</td>
+        </tr>
+        <tr>
+            <td>John Yelle</td>
+            <td>Independent Contributor (Formerly DTCC)</td>
+        </tr>
     </tbody>
 </table>
 
