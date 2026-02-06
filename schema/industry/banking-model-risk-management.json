@@ -157,7 +157,7 @@
                 }
             }
         },
-        "black_box_risk_assessment": {
+        "risk_assessment": {
             "type": "object",
             "description": "Risk assessment attributes for black box third-party models and embedded agents",
             "properties": {
