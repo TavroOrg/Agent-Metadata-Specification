@@ -174,9 +174,13 @@ Table 4 summarizes the additional relations in the medical device industry.
   <em>Table 4: Additional relations for the medical device industry</em>
 </p>
 
-## JSON Schema
+## JSON Schemas
 
 Please refer to the [JSON schema](../schema/industry/medical-device-manufacturer-schema.json) that implements these enhancements for the Medical Device industry.
+
+## A2A Agent Card
+
+Please refer to the example [A2A card](../examples/Sepsis%20ImmunoScore%20-%20Authenticated%20Agent%20Card.json) for an agent in the Medical Device industry.
 
 ## Contributors:
 
