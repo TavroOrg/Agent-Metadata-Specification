@@ -21,7 +21,10 @@
             "tags": []
         }
     ],
-    "provider": "Prenosis, inc",
+    "provider": {
+        "organization": "Prenosis, inc",
+        "url": "https://prenosis.com/"
+    },
     "security_schemes": null,
     "security": null,
     "signatures": null,
