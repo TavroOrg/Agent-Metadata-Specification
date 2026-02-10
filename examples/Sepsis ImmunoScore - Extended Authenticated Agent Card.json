@@ -187,10 +187,10 @@
         }
     ],
     "business_process": {
-        "identifier": null,
-        "name": null,
-        "description": null,
-        "business_criticality": null
+        "identifier": "MedDev-1",
+        "name": "Siemens Atellica CH 930",
+        "description": "Medical device",
+        "business_criticality": "Tier 1 (Systemic)"
     },
     "regulation": {
         "name": null,
