@@ -42,7 +42,8 @@
         "environment": "Development",
         "tags": null,
         "governance_status": null,
-        "reviewer": null
+        "reviewer": null,
+        "cost_center": null
     },
     "configuration": {
         "access_scope": "Read",
@@ -82,7 +83,10 @@
             "target_object_domain": null,
             "target_object_name": "Model Parameters",
             "target_object_type": "Table",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -95,7 +99,10 @@
             "target_object_domain": null,
             "target_object_name": "Biomarker - C-reactive protein (CRP)",
             "target_object_type": "Column",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -108,7 +115,10 @@
             "target_object_domain": null,
             "target_object_name": "Biomarker - Procalcitonin (PCT)",
             "target_object_type": "Column",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -121,7 +131,10 @@
             "target_object_domain": null,
             "target_object_name": "Blood Pressure",
             "target_object_type": "Column",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -134,7 +147,10 @@
             "target_object_domain": null,
             "target_object_name": "Heart Rate",
             "target_object_type": "Column",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -147,19 +163,24 @@
             "target_object_domain": null,
             "target_object_name": "Temperature",
             "target_object_type": "Column",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         }
     ],
-    "tool": {
-        "name": null,
-        "description": null,
-        "delegation_possible": null,
-        "allowed_delegates": null,
-        "input_or_output": null,
-        "parameter_name": null,
-        "parameter_type": null,
-        "default_value": null
-    },
+    "tool": [
+        {
+            "name": null,
+            "description": null,
+            "delegation_possible": null,
+            "allowed_delegates": null,
+            "input_or_output": null,
+            "parameter_name": null,
+            "parameter_type": null,
+            "default_value": null
+        }
+    ],
     "mcp_server": {
         "name": null,
         "url": null,
@@ -195,12 +216,14 @@
             "emergency_tier": null
         }
     ],
-    "business_process": {
-        "identifier": "MedDev-1",
-        "name": "Siemens Atellica CH 930",
-        "description": "Medical device",
-        "business_criticality": "Tier 1 (Systemic)"
-    },
+    "business_process": [
+        {
+            "identifier": "MedDev-1",
+            "name": "Siemens Atellica CH 930",
+            "description": "Medical device",
+            "business_criticality": "Tier 1 (Systemic)"
+        }
+    ],
     "regulation": {
         "name": null,
         "regulatory_authority": null,

@@ -42,7 +42,8 @@
         "environment": "Development",
         "tags": null,
         "governance_status": null,
-        "reviewer": null
+        "reviewer": null,
+        "cost_center": null
     },
     "configuration": {
         "access_scope": null,
@@ -82,7 +83,10 @@
             "target_object_domain": null,
             "target_object_name": "action_lexisnexis_verify",
             "target_object_type": "Tool",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         },
         {
             "relationship_id": null,
@@ -95,7 +99,10 @@
             "target_object_domain": null,
             "target_object_name": "action_socure_synthetic_score",
             "target_object_type": "Tool",
-            "access_level": null
+            "access_level": null,
+            "uses_pii": null,
+            "uses_phi": null,
+            "uses_pci": null
         }
     ],
     "tool": [
