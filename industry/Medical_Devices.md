@@ -180,7 +180,7 @@ Please refer to the [JSON schema](../schema/industry/medical-device-manufacturer
 
 ## A2A Agent Card
 
-Please refer to the example [A2A card](../examples/Sepsis%20ImmunoScore%20-%20Authenticated%20Agent%20Card.json) for an agent in the Medical Device industry.
+Please refer to the example [A2A card](../examples/Sepsis%20ImmunoScore%20-%20Extended%20Authenticated%20Agent%20Card.json) for an agent in the Medical Device industry.
 
 ## Contributors:
 
