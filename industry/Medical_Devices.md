@@ -138,7 +138,7 @@ Table 3 provides a sample of regulations that impact AI agents in the medical de
     </tr>
     <tr>
       <td>IMDRF Software as a Medical Device (SaMD) Working Group</td>
-      <td>"Software as a Medical Device": Possible Framework for Risk Categorization and Corresponding Considerations, September 18, 2014<sup>1</sup></td>
+      <td><a href="https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf" target="_blank">"Software as a Medical Device"</a>: Possible Framework for Risk Categorization and Corresponding Considerations, September 18, 2014</td>
     </tr>
   </tbody>
 </table>
@@ -187,8 +187,3 @@ Please refer to the example [A2A card](../examples/Sepsis%20ImmunoScore%20-%20Ex
 [Joe DeLuca](https://www.linkedin.com/in/joseph-deluca-0717411b/)
 
 [Mike Jennings](https://www.linkedin.com/in/mikefjennings/)
-
----
-
-<p><sup>1</sup>IMDRF, "Software as a Medical Device": Possible Framework for Risk Categorization and Corresponding Considerations, <a href="https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf" target="_blank">https://www.imdrf.org/sites/default/files/docs/imdrf/final/technical/imdrf-tech-140918-samd-framework-risk-categorization-141013.pdf</a>.
-</p>
