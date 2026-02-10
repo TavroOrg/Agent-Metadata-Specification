@@ -430,152 +430,158 @@
       }
     },
     "data_source": {
-      "type": "object",
+      "type": "array",
       "description": "Data Source definition and attributes.",
-      "required": [
-        "relationship_id",
-        "source_object_id",
-        "source_object_domain",
-        "source_object_name",
-        "source_object_type",
-        "target_object_id",
-        "target_object_domain",
-        "target_object_name",
-        "target_object_type",
-        "access_level"
-      ],
-      "properties": {
-        "relationship_id": {
-          "type": "string",
-          "description": "A unique Relationship ID"
-        },
-        "parent_relationship_id": {
-          "type": "string",
-          "description": "Parent ID, if any"
-        },
-        "source_object_id": {
-          "type": "string",
-          "description": "Unique ID as in the Source system"
-        },
-        "source_object_domain": {
-          "type": "string",
-          "description": "Domain"
-        },
-        "source_object_name": {
-          "type": "string",
-          "description": "Object name"
-        },
-        "source_object_type": {
-          "type": "string",
-          "enum": [
-            "Agent",
-            "MCP Server",
-            "Table",
-            "Column",
-            "View",
-            "File",
-            "Folder"
-          ],
-          "description": "Type of Source Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
-        },
-        "target_object_id": {
-          "type": "string",
-          "description": "Unique ID as in the Target system"
-        },
-        "target_object_domain": {
-          "type": "string",
-          "description": "Domain"
-        },
-        "target_object_name": {
-          "type": "string",
-          "description": "Object Name"
-        },
-        "target_object_type": {
-          "type": "string",
-          "description": "Type of Target Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
-        },
-        "access_level": {
-          "type": "string",
-          "description": "Access Level (READ, WRITE or DELETE)"
-        },
-        "uses_pii": {
-          "type": "boolean",
-          "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII) from the data source"
-        },
-        "uses_phi": {
-          "type": "boolean",
-          "description": "Boolean indicating if the agent uses Protected Health Information (PHI) from the data source"
-        },
-        "uses_pci": {
-          "type": "boolean",
-          "description": "Boolean indicating if the agent uses Payment Card Industry (PCI) data from the data source"
+      "items": {
+        "type": "object",
+        "required": [
+          "relationship_id",
+          "source_object_id",
+          "source_object_domain",
+          "source_object_name",
+          "source_object_type",
+          "target_object_id",
+          "target_object_domain",
+          "target_object_name",
+          "target_object_type",
+          "access_level"
+        ],
+        "properties": {
+          "relationship_id": {
+            "type": "string",
+            "description": "A unique Relationship ID"
+          },
+          "parent_relationship_id": {
+            "type": "string",
+            "description": "Parent ID, if any"
+          },
+          "source_object_id": {
+            "type": "string",
+            "description": "Unique ID as in the Source system"
+          },
+          "source_object_domain": {
+            "type": "string",
+            "description": "Domain"
+          },
+          "source_object_name": {
+            "type": "string",
+            "description": "Object name"
+          },
+          "source_object_type": {
+            "type": "string",
+            "enum": [
+              "Agent",
+              "MCP Server",
+              "Table",
+              "Column",
+              "View",
+              "File",
+              "Folder"
+            ],
+            "description": "Type of Source Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
+          },
+          "target_object_id": {
+            "type": "string",
+            "description": "Unique ID as in the Target system"
+          },
+          "target_object_domain": {
+            "type": "string",
+            "description": "Domain"
+          },
+          "target_object_name": {
+            "type": "string",
+            "description": "Object Name"
+          },
+          "target_object_type": {
+            "type": "string",
+            "description": "Type of Target Object (e.g., Agent, MCP Server, Table, Column, View, File, Folder)"
+          },
+          "access_level": {
+            "type": "string",
+            "description": "Access Level (READ, WRITE or DELETE)"
+          },
+          "uses_pii": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent uses Personally Identifiable Information (PII) from the data source"
+          },
+          "uses_phi": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent uses Protected Health Information (PHI) from the data source"
+          },
+          "uses_pci": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent uses Payment Card Industry (PCI) data from the data source"
+          }
         }
       }
     },
     "tool": {
-      "type": "object",
+      "type": "array",
       "description": "Tool definition and attributes configured for the agent.",
-      "required": [
-        "identifier",
-        "name",
-        "description"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique reference ID for the tool (e.g., PolicySearchTool)"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the tool"
-        },
-        "description": {
-          "type": "string",
-          "description": "Detailed explanation of the purpose and functionality"
-        },
-        "delegation_possible": {
-          "type": "boolean",
-          "description": "Boolean indicating if the agent can pass the request to another agent"
-        },
-        "allowed_delegates": {
-          "type": "array",
-          "description": "A list of Agent IDs, which the agent is allowed to delegate to",
-          "items": {
-            "type": "string"
-          }
-        },
-        "input_or_output": {
-          "type": "string",
-          "description": "Indicates whether it is an input or output parameter"
-        },
-        "parameter_name": {
-          "type": "string",
-          "description": "Name of the parameter"
-        },
-        "parameter_type": {
-          "type": "string",
-          "description": "Required type and format of the parameter"
-        },
-        "default_value": {
-          "type": "string",
-          "description": "Default value, if any"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the tool and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this tool uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Tool",
-                  "Agent",
-                  "MCP Server",
-                  "Data Source",
-                  "Knowledge Source"
-                ]
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "A unique reference ID for the tool (e.g., PolicySearchTool)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the tool"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed explanation of the purpose and functionality"
+          },
+          "delegation_possible": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent can pass the request to another agent"
+          },
+          "allowed_delegates": {
+            "type": "array",
+            "description": "A list of Agent IDs, which the agent is allowed to delegate to",
+            "items": {
+              "type": "string"
+            }
+          },
+          "input_or_output": {
+            "type": "string",
+            "description": "Indicates whether it is an input or output parameter"
+          },
+          "parameter_name": {
+            "type": "string",
+            "description": "Name of the parameter"
+          },
+          "parameter_type": {
+            "type": "string",
+            "description": "Required type and format of the parameter"
+          },
+          "default_value": {
+            "type": "string",
+            "description": "Default value, if any"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the tool and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this tool uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Tool",
+                    "Agent",
+                    "MCP Server",
+                    "Data Source",
+                    "Knowledge Source"
+                  ]
+                }
               }
             }
           }
@@ -721,48 +727,51 @@
       }
     },
     "application": {
-      "type": "object",
+      "type": "array",
       "description": "Application definition and attributes.",
-      "required": [
-        "identifier",
-        "name",
-        "description",
-        "business_criticality",
-        "emergency_tier"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique reference ID for the application"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the application"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the application"
-        },
-        "business_criticality": {
-          "type": "string",
-          "description": "The criticality of the application to the operation of the business (e.g., Low, Medium, High)"
-        },
-        "emergency_tier": {
-          "type": "string",
-          "description": "The impact to the business if the application is inoperable (e.g., Non-Critical, Business Critical, Mission Critical)"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the application and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this application uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
-                ]
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description",
+          "business_criticality",
+          "emergency_tier"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "A unique reference ID for the application"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the application"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application"
+          },
+          "business_criticality": {
+            "type": "string",
+            "description": "The criticality of the application to the operation of the business (e.g., Low, Medium, High)"
+          },
+          "emergency_tier": {
+            "type": "string",
+            "description": "The impact to the business if the application is inoperable (e.g., Non-Critical, Business Critical, Mission Critical)"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the application and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this application uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent"
+                  ]
+                }
               }
             }
           }
@@ -770,43 +779,46 @@
       }
     },
     "business_process": {
-      "type": "object",
+      "type": "array",
       "description": "Business Process definition and attributes.",
-      "required": [
-        "identifier",
-        "name",
-        "description",
-        "business_criticality"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "The ID of the business process that uses the agent"
-        },
-        "name": {
-          "type": "string",
-          "description": "The human-readable name of the business process"
-        },
-        "description": {
-          "type": "string",
-          "description": "A brief description of the business process, its significance and relevance"
-        },
-        "business_criticality": {
-          "type": "string",
-          "description": "The criticality of the process to the operation of the business (e.g., Low, Medium, High)"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the business process and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this business process uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
-                ]
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description",
+          "business_criticality"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "The ID of the business process that uses the agent"
+          },
+          "name": {
+            "type": "string",
+            "description": "The human-readable name of the business process"
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description of the business process, its significance and relevance"
+          },
+          "business_criticality": {
+            "type": "string",
+            "description": "The criticality of the process to the operation of the business (e.g., Low, Medium, High)"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the business process and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this business process uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent"
+                  ]
+                }
               }
             }
           }
