@@ -45,7 +45,7 @@
         "reviewer": null
     },
     "configuration": {
-        "access_scope": null,
+        "access_scope": "Read",
         "memory_type": null,
         "data_freshness_policy": null,
         "autonomy_level": "1.0",
