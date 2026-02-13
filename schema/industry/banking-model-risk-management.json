@@ -6,9 +6,9 @@
     "required": [
         "identification",
         "lineage",
-        "compliance",
+        "regulatory_and_compliance",
         "model_validation",
-        "recertification"
+        "recertification_controls"
     ],
     "properties": {
         "identification": {
@@ -61,6 +61,10 @@
             "type": "object",
             "description": "Lineage attributes for the model",
             "properties": {
+                "provisioning": {
+                    "type": "string",
+                    "description": "Documentary access that access to the model is limited to appropriate users and provisioned through an approval process"
+                },
                 "inputs": {
                     "type": "array",
                     "description": "List of inputs for the model",
@@ -95,16 +99,28 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "processing": {
+                    "type": "string",
+                    "description": "How is data joined (e.g., API, transfer methods)"
                 }
             }
         },
-        "compliance": {
+        "regulatory_and_compliance": {
             "type": "object",
-            "description": "Compliance attributes for the model",
+            "description": "Regulatory and compliance attributes for the model",
             "properties": {
+                "intellectual_property": {
+                    "type": "string",
+                    "description": "Documentary evidence that IP considerations dealing with training data and retrieving content were addressed"
+                },
                 "training": {
                     "type": "boolean",
                     "description": "Have users completed required American Bankers Association (ABA) training on use of AI in models?"
+                },
+                "data_sovereignty": {
+                    "type": "string",
+                    "description": "Documentary evidence that data residency and cross-border transfer considerations were addressed"
                 }
             }
         },
@@ -117,15 +133,23 @@
                     "format": "date",
                     "description": "Date of last model validation"
                 },
-                "evidence": {
+                "bias_and_fairness": {
                     "type": "string",
-                    "description": "Documentary evidence of model validation"
+                    "description": "Documentary evidence for bias and fairness"
+                },
+                "model_drift": {
+                    "type": "string",
+                    "description": "Documentary evidence for drift testing"
+                },
+                "model_performance": {
+                    "type": "string",
+                    "description": "Documentary evidence of model performance monitoring and alert thresholds"
                 }
             }
         },
-        "recertification": {
+        "recertification_controls": {
             "type": "object",
-            "description": "Recertification attributes for the model",
+            "description": "Recertification control attributes for the model",
             "properties": {
                 "identification": {
                     "type": "string",
