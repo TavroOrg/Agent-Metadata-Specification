@@ -149,6 +149,7 @@ Table 3 provides a sample of regulations that impact AI agents in the medical de
 ## Additional Relations
 Table 4 summarizes the additional relations in the medical device industry.
 
+<div align="center">
 <table>
   <thead>
     <tr>
@@ -173,6 +174,7 @@ Table 4 summarizes the additional relations in the medical device industry.
 <p align="center">
   <em>Table 4: Additional relations for the medical device industry</em>
 </p>
+</div>
 
 ## JSON Schemas
 

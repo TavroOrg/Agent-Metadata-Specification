@@ -114,13 +114,13 @@
                     "type": "string",
                     "description": "Documentary evidence that IP considerations dealing with training data and retrieving content were addressed"
                 },
-                "training": {
-                    "type": "boolean",
-                    "description": "Have users completed required American Bankers Association (ABA) training on use of AI in models?"
-                },
                 "data_sovereignty": {
                     "type": "string",
                     "description": "Documentary evidence that data residency and cross-border transfer considerations were addressed"
+                },
+                "training": {
+                    "type": "boolean",
+                    "description": "Have users completed required American Bankers Association (ABA) training on use of AI in models?"
                 }
             }
         },

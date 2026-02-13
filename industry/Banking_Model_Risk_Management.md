@@ -103,7 +103,7 @@ Table 1 summarizes the attributes of a model that are specific to model risk man
       <td>Documentary evidence that IP considerations dealing with training data and retrieving content were addressed</td>
     </tr>
     <tr>
-      <td>Regulatory Compliance</td>
+      <td>Regulatory and Compliance</td>
       <td>Data Sovereignty</td>
       <td>Documentary evidence that data residency and cross-border transfer considerations were addressed</td>
     </tr>
@@ -230,6 +230,7 @@ Banks generally have robust model governance methodologies for in-house models. 
 ## Additional Relations
 Table 3 summarizes the additional relations for model risk management in banking.
 
+<div align="center">
 <table>
   <thead>
     <tr>
@@ -254,6 +255,7 @@ Table 3 summarizes the additional relations for model risk management in banking
 <p align="center">
   <em>Table 3: Additional relations for model risk management in banking</em>
 </p>
+</div>
 
 ## Sample Regulations
 Table 4 summarizes regulations that impact AI agents within model risk management in banking.
