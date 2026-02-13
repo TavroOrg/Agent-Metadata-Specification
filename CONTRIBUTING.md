@@ -53,6 +53,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Citizens & Northern Bank</td>
         </tr>
         <tr>
+            <td>Ravindra Harve</td>
+            <td>Boston College</td>
+        </tr>
+        <tr>
             <td>Mike Jennings</td>
             <td>Independent Contributor (Formerly Walgreens)</td>
         </tr>
@@ -81,11 +85,23 @@ The following individuals are acknowledged for their significant contributions t
             <td>Delta Community Credit Union</td>
         </tr>
         <tr>
+            <td>Shyam Rasaily</td>
+            <td>T. Rowe Price</td>
+        </tr>
+        <tr>
+            <td>Phani Rayudu</td>
+            <td>Walgreens</td>
+        </tr>
+        <tr>
             <td><a href="https://github.com/kdshah2205" target="_blank">Khushboo Shah</td>
             <td>Tavro AI</td>
         </tr>
         <tr>
             <td>Doug Shannon</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
+            <td>Marti Smith</td>
             <td>Independent Contributor</td>
         </tr>
         <tr>

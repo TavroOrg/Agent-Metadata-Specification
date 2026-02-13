@@ -64,6 +64,11 @@ Table 1 summarizes the attributes of a model that are specific to model risk man
     </tr>
     <tr>
       <td>Lineage</td>
+      <td>Provisioning</td>
+      <td>Documentary access that access to the model is limited to appropriate users and provisioned through an approval process</td>
+    </tr>
+    <tr>
+      <td>Lineage</td>
       <td>Inputs</td>
       <td>List of inputs for the model</td>
     </tr>
@@ -88,7 +93,22 @@ Table 1 summarizes the attributes of a model that are specific to model risk man
       <td>List of destinations for the model</td>
     </tr>
     <tr>
-      <td>Compliance</td>
+      <td>Lineage</td>
+      <td>Processing</td>
+      <td>How is data joined (e.g., API, transfer methods)</td>
+    </tr>
+    <tr>
+      <td>Regulatory and Compliance</td>
+      <td>Intellectual Property (IP)</td>
+      <td>Documentary evidence that IP considerations dealing with training data and retrieving content were addressed</td>
+    </tr>
+    <tr>
+      <td>Regulatory Compliance</td>
+      <td>Data Sovereignty</td>
+      <td>Documentary evidence that data residency and cross-border transfer considerations were addressed</td>
+    </tr>
+    <tr>
+      <td>Regulatory and Compliance</td>
       <td>Training</td>
       <td>Have users completed required American Bankers Association (ABA) training on use of AI in models?</td>
     </tr>
@@ -99,41 +119,51 @@ Table 1 summarizes the attributes of a model that are specific to model risk man
     </tr>
     <tr>
       <td>Model Validation</td>
-      <td>Evidence</td>
-      <td>Documentary evidence of model validation</td>
+      <td>Bias and Fairness</td>
+      <td>Documentary evidence for bias and fairness</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Model Validation</td>
+      <td>Model Drift</td>
+      <td>Documentary evidence for drift testing</td>
+    </tr>
+    <tr>
+      <td>Model Validation</td>
+      <td>Model Performance</td>
+      <td>Documentary evidence of model performance monitoring and alert thresholds</td>
+    </tr>
+    <tr>
+      <td>Recertification Controls</td>
       <td>Identification</td>
-      <td>Have model’s use case remained the same? If not, what changed?</td>
+      <td>Have model's use case remained the same? If not, what changed?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Lineage</td>
-      <td>Have model’s inputs and data sources remained the same? If not, what changed?</td>
+      <td>Have model's inputs and data sources remained the same? If not, what changed?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Lineage</td>
-      <td>Have model’s outputs and destinations remained the same? If not, what changed?</td>
+      <td>Have model's outputs and destinations remained the same? If not, what changed?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Lineage</td>
-      <td>Have model’s users remained the same? If not, what changed?</td>
+      <td>Have model's users remained the same? If not, what changed?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Processing Components</td>
-      <td>Have model’s internal processing components and algorithms remained the same? If not, what changed?</td>
+      <td>Have model's internal processing components and algorithms remained the same? If not, what changed?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Compliance</td>
       <td>Have users completed required training on use of AI in models?</td>
     </tr>
     <tr>
-      <td>Recertification</td>
+      <td>Recertification Controls</td>
       <td>Risk Assessment</td>
       <td>Has a comprehensive risk assessment been conducted on any use of AI? If so, please attach results.</td>
     </tr>
@@ -257,5 +287,7 @@ Please refer to the [JSON schema](../schema/industry/banking-model-risk-manageme
 [Antonio DiPerna, BankUnited](https://www.linkedin.com/in/antonio-di-perna-851153/)
 
 [Arpan Patel, Delta Community Credit Union](https://www.linkedin.com/in/arpanpatel7/)
+
+[Shyam Rasaily, T. Rowe Price](https://www.linkedin.com/in/shyam-rasaily-1b213245/)
 
 [Dr. Su Rayburn, Delta Community Credit Union](https://www.linkedin.com/in/surayburn/)
