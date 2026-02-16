@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The cross-industry Agent Metadata Specification is published here. This section provides a basic introduction and will be built out based on future input from industry leaders.
+The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). This section provides a basic introduction and will be built out based on future input from industry leaders.
 
 ## Use of Physical AI with AI Agents Necessitates Taxonomy of Agent Cards
 

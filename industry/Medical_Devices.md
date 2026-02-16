@@ -103,6 +103,7 @@ Table 1 summarizes the attributes of an agent that are specific to the medical d
 ## Additional Medical Device Attributes
 Table 2 summarizes the attributes of a device that are specific to the medical device industry.
 
+<div align="center">
 <table>
   <thead>
     <tr>
@@ -117,6 +118,7 @@ Table 2 summarizes the attributes of a device that are specific to the medical d
     </tr>
   </tbody>
 </table>
+</div>
 <p align="center">
   <em>Table 2: Medical device attributes for the medical device industry</em>
 </p>

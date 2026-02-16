@@ -30,7 +30,7 @@ For example, the Agent Card approach may be used to aggregate agent risk across 
 - Device
 - Trading Desk
 
-Contributors:
+## Contributors:
 
 [Vikas Gupta, Hindustan Petroleum](https://www.linkedin.com/in/gvikas1/)
 
