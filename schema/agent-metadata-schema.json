@@ -194,57 +194,46 @@
           }
         },
         "technical_context": {
-          "type": "object",
-          "description": "Technical relationships between the agent and enabling platform components.",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Technical objects that this agent uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent",
-                  "LLM Model",
-                  "MCP Server",
-                  "Guardrail",
-                  "Tool",
-                  "Data Source",
-                  "Knowledge Source",
-                  "Prompt Template",
-                  "Memory"
-                ]
-              }
+            "type": "object",
+            "description": "Relationships between the agent and other objects",
+            "properties": {
+                "uses": {
+                    "type": "array",
+                    "description": "Objects that this agent uses",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Agent",
+                            "LLM Model",
+                            "Prompt Template",
+                            "Memory",
+                            "Knowledge Source",
+                            "Data Source",
+                            "Tool",
+                            "MCP Server",
+                            "Guardrail"
+                        ]
+                    }
+                }
             }
-          }
         },
         "business_context": {
-          "type": "object",
-          "description": "The business context of the agent, including business entities and processes it supports.",
-          "properties": {
-            "used_by": {
-              "type": "array",
-              "description": "Business entities that use this agent",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Application",
-                  "Business Process",
-                  "AI Use Case",
-                  "Physical AI"
-                ]
-              }
-            },
-            "provided_by": {
-              "type": "array",
-              "description": "Providers that provide this agent",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Provider"
-                ]
-              }
+            "type": "object",
+            "description": "The business context of the agent, including the business process, applications and use cases it supports",
+            "properties": {
+                "used by": {
+                    "type": "array",
+                    "description": "Business entities that uses this agent",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Application",
+                            "Business Process",
+                            "AI Use Case"
+                        ]
+                    }
+                }
             }
-          }
         },
         "industry_specific_context": {
           "type": "object",
@@ -281,93 +270,46 @@
           "type": "object",
           "description": "The risk posture of the agent, based on the various assessments performed on the agent and the controls in place along with a Trust Score",
           "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Risk entities that this agent interacts with",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Assessment",
-                  "Control"
-                ]
+              "uses": {
+                  "type": "array",
+                  "description": "Risk entities that this agent interacts with",
+                  "items": {
+                      "type": "string",
+                      "enum": [
+                          "Assessment",
+                          "Control"
+                      ]
+                  }
               }
-            },
-            "trust_score": {
+          },
+          "trust_score": {
               "type": "number",
               "description": "The trust score of the agent",
               "rationale": "The rationale for the trust score"
-            }
           }
         },
         "compliance_posture": {
-          "type": "object",
-          "description": "The compliance posture of the agent, based on the regulations and standards/policies it needs to comply with, along with a Compliance Score",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Regulations and standards that this agent needs to comply with",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Regulations",
-                  "Policies",
-                  "Standards"
-                ]
-              }
+            "type": "object",
+            "description": "The compliance posture of the agent, based on the regulations and standards/policies it needs to comply with, along with a Compliance Score",
+            "properties": {
+                "uses": {
+                    "type": "array",
+                    "description": "Regulations and standards that this agent needs to comply with",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Regulations",
+                            "Policies",
+                            "Standards"
+                        ]
+                    }
+                }
             },
             "compliance_score": {
-              "type": "number",
-              "description": "The compliance score of the agent",
-              "rationale": "The rationale for the compliance score"
+                "type": "number",
+                "description": "The compliance score of the agent",
+                "rationale": "The rationale for the compliance score"
             }
-          }
-        },
-        "functional_context": {
-          "type": "object",
-          "description": "Functional components used by the agent to execute tasks and retrieve context.",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Functional objects that this agent uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Memory",
-                  "Prompt Template",
-                  "Knowledge Source",
-                  "Data Source",
-                  "Tool"
-                ]
-              }
-            }
-          }
-        },
-        "risk_context": {
-          "type": "object",
-          "description": "Risk context around the agent, including governance and assessment relationships.",
-          "properties": {
-            "governed_by": {
-              "type": "array",
-              "description": "Risk and compliance objects that govern this agent",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Regulation / Framework",
-                  "Control"
-                ]
-              }
-            },
-            "assessed_by": {
-              "type": "array",
-              "description": "Risk assessment objects that assess this agent",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Risk Assessment"
-                ]
-              }
-            }
-          }
         }
       }
     },
@@ -974,94 +916,6 @@
                   "AI Use Case",
                   "Application",
                   "Business Process"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "control": {
-      "type": "object",
-      "description": "Control definition and attributes used to govern agent risk.",
-      "required": [
-        "identifier",
-        "name",
-        "description"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique reference ID for the control"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the control"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the control objective and implementation"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the control and other objects",
-          "properties": {
-            "governs": {
-              "type": "array",
-              "description": "Objects that this control governs",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
-                ]
-              }
-            },
-            "governed_by": {
-              "type": "array",
-              "description": "Objects that govern this control",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Regulation / Framework"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "physical_ai": {
-      "type": "object",
-      "description": "Physical AI asset definition and attributes.",
-      "required": [
-        "identifier",
-        "name",
-        "description"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique reference ID for the physical AI asset"
-        },
-        "name": {
-          "type": "string",
-          "description": "Name of the physical AI asset (e.g., infusion pump, robot, camera system)"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the physical AI asset and its role"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the physical AI asset and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this physical AI asset uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
                 ]
               }
             }
