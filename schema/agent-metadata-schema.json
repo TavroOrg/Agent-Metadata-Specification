@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Agent Metadata Specification",
-  "version": "0.2.6",
+  "version": "0.2.8",
   "description": "A standardized framework for defining AI Agent identity, configuration, lineage, and risk controls",
   "type": "object",
   "properties": {
@@ -193,123 +193,31 @@
             }
           }
         },
-        "technical_context": {
-            "type": "object",
-            "description": "Relationships between the agent and other objects",
-            "properties": {
-                "uses": {
-                    "type": "array",
-                    "description": "Objects that this agent uses",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Agent",
-                            "LLM Model",
-                            "Prompt Template",
-                            "Memory",
-                            "Knowledge Source",
-                            "Data Source",
-                            "Tool",
-                            "MCP Server",
-                            "Guardrail"
-                        ]
-                    }
-                }
-            }
-        },
-        "business_context": {
-            "type": "object",
-            "description": "The business context of the agent, including the business process, applications and use cases it supports",
-            "properties": {
-                "used by": {
-                    "type": "array",
-                    "description": "Business entities that uses this agent",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Application",
-                            "Business Process",
-                            "AI Use Case"
-                        ]
-                    }
-                }
-            }
-        },
-        "industry_specific_context": {
+        "relations": {
           "type": "object",
-          "description": "The industry specific context of the agent. For instance, a medical device agent may need to comply with FDA regulations",
+          "description": "Relationships between the Agent and other objects",
           "properties": {
-            "industry": {
-              "type": "string",
-              "description": "Industry specific entities that this agent interacts with",
+            "uses": {
+              "type": "array",
+              "description": "Objects that this agent uses",
               "items": {
-                "Medical Device Manufacturer": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/schema/industry/medical-device-manufacturer-schema.json",
-                "Banking Model Risk Management": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/schema/industry/banking-model-risk-management.json",
-                "Investment Management": "",
-                "Insurance": "",
-                "Healthcare Provider": "",
-                "Healthcare Payer": "",
-                "Retail": "",
-                "E-commerce": "",
-                "Logistics": "",
-                "Manufacturing": "",
-                "Energy": "",
-                "Utilities": "",
-                "Telecommunications": "",
-                "Media": "",
-                "Entertainment": "",
-                "Education": "",
-                "Government": "",
-                "Non-profit": "",
-                "Other": ""
+                "type": "string",
+                "enum": [
+                  "Agent",
+                  "LLM Model",
+                  "Prompt Template",
+                  "Memory",
+                  "Knowledge Source",
+                  "Data Source",
+                  "Tool",
+                  "Application",
+                  "MCP Server",
+                  "Guardrail",
+                  "Physical AI"
+                ]
               }
             }
           }
-        },
-        "risk_posture": {
-          "type": "object",
-          "description": "The risk posture of the agent, based on the various assessments performed on the agent and the controls in place along with a Trust Score",
-          "properties": {
-              "uses": {
-                  "type": "array",
-                  "description": "Risk entities that this agent interacts with",
-                  "items": {
-                      "type": "string",
-                      "enum": [
-                          "Assessment",
-                          "Control"
-                      ]
-                  }
-              }
-          },
-          "trust_score": {
-              "type": "number",
-              "description": "The trust score of the agent",
-              "rationale": "The rationale for the trust score"
-          }
-        },
-        "compliance_posture": {
-            "type": "object",
-            "description": "The compliance posture of the agent, based on the regulations and standards/policies it needs to comply with, along with a Compliance Score",
-            "properties": {
-                "uses": {
-                    "type": "array",
-                    "description": "Regulations and standards that this agent needs to comply with",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Regulations",
-                            "Policies",
-                            "Standards"
-                        ]
-                    }
-                }
-            },
-            "compliance_score": {
-                "type": "number",
-                "description": "The compliance score of the agent",
-                "rationale": "The rationale for the compliance score"
-            }
         }
       }
     },
@@ -357,6 +265,97 @@
         "version_number": {
           "type": "string",
           "description": "The version number of the LLM model"
+        }
+      }
+    },
+    "ai_model": {
+      "type": "array",
+      "description": "AI Model definition and attributes.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "owner",
+          "department_executive",
+          "description"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the AI model that uses the agent"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Name of the owner of the AI model that uses the agent"
+          },
+          "department_executive": {
+            "type": "string",
+            "description": "Name of the department executive of the AI model that uses the agent"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the AI model that uses the agent"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the AI model and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this AI model uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "physical_ai": {
+      "type": "object",
+      "description": "Physical AI definition and attributes.",
+      "required": [
+        "identifier",
+        "name",
+        "type",
+        "sensory_input_source"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "Unique identifier of the physical AI (e.g., Device ID)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the physical AI"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of physical AI (e.g., robot, AV, camera, medical device)"
+        },
+        "sensory_input_source": {
+          "type": "string",
+          "description": "Identify the source of data feeds"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the physical AI and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this physical AI uses",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Agent"
+                ]
+              }
+            }
+          }
         }
       }
     },
@@ -619,6 +618,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "MCP Server",
                   "Agent",
                   "Tool",
                   "Data Source",
@@ -661,7 +661,7 @@
         "identifier",
         "name",
         "description",
-        "owner",
+        "owner_name",
         "function",
         "problem_statement",
         "priority",
@@ -684,7 +684,7 @@
           "type": "string",
           "description": "Name of the person who proposed the AI use case"
         },
-        "owner": {
+        "owner_name": {
           "type": "string",
           "description": "Name of the business owner of the AI use case"
         },
@@ -825,7 +825,7 @@
         }
       }
     },
-    "regulation": {
+    "regulation_or_framework": {
       "type": "object",
       "description": "Regulation definition and attributes.",
       "required": [
@@ -836,15 +836,23 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The name of the regulation (e.g., EU AI Act)"
+          "description": "The name of the regulation or framework"
+        },
+        "type": {
+          "type": "string",
+          "description": "Regulation or framework"
         },
         "regulatory_authority": {
           "type": "string",
-          "description": "The name of the regulatory authority (e.g., European Union)"
+          "description": "The name of the regulatory authority or governing body (e.g., European Union, NIST)"
         },
         "jurisdiction": {
           "type": "string",
           "description": "The jurisdiction of the regulation (e.g., European Union, California)"
+        },
+        "requirement": {
+          "type": "string",
+          "description": "The name of the requirement from the regulation or framework (e.g., EU AI Act Article 5 - Prohibited AI Practices)"
         },
         "relations": {
           "type": "object",
@@ -856,8 +864,53 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "Control",
                   "AI Use Case",
-                  "Risk Assessment"
+                  "Agent"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "control": {
+      "type": "object",
+      "description": "Control definition and attributes.",
+      "required": [
+        "identifier",
+        "name",
+        "objective",
+        "domain"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "The ID of the control"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the control (e.g., Bias Mitigation)"
+        },
+        "objective": {
+          "type": "string",
+          "description": "The objective of the control (e.g., Mitigate bias associated with AI agents)"
+        },
+        "domain": {
+          "type": "string",
+          "description": "The domain or category associated with the control (e.g., cybersecurity, legal, regulatory)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the control and other objects",
+          "properties": {
+            "governs": {
+              "type": "array",
+              "description": "Objects that this control governs",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Agent"
                 ]
               }
             }
@@ -874,6 +927,8 @@
         "assessor",
         "date",
         "risk_score",
+        "risk_classification",
+        "type",
         "state"
       ],
       "properties": {
@@ -896,7 +951,15 @@
         },
         "risk_score": {
           "type": "number",
-          "description": "The risk score assigned to the subject (application, business process, AI use case, agent) of the risk assessment"
+          "description": "The risk score assigned to the risk assessment (e.g., risk score may be assigned on a scale of 1 - 10)"
+        },
+        "risk_classification": {
+          "type": "string",
+          "description": "The risk classification assigned to the risk assessment (e.g., Critical, High, Medium, Low)"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of risk score (Inherent Risk, Residual Risk)"
         },
         "state": {
           "type": "string",
@@ -913,9 +976,7 @@
                 "type": "string",
                 "enum": [
                   "Agent",
-                  "AI Use Case",
-                  "Application",
-                  "Business Process"
+                  "AI Use Case"
                 ]
               }
             }
