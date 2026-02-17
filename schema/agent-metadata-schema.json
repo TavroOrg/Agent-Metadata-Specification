@@ -193,6 +193,37 @@
             }
           }
         },
+        "industry_specific_context": {
+          "type": "object",
+          "description": "The industry specific context of the agent. For instance, a medical device agent may need to comply with FDA regulations",
+          "properties": {
+            "industry": {
+              "type": "string",
+              "description": "Industry specific entities that this agent interacts with",
+              "items": {
+                "Medical Device Manufacturer": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/schema/industry/medical-device-manufacturer-schema.json",
+                "Banking Model Risk Management": "https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/schema/industry/banking-model-risk-management.json",
+                "Investment Management": "",
+                "Insurance": "",
+                "Healthcare Provider": "",
+                "Healthcare Payer": "",
+                "Retail": "",
+                "E-commerce": "",
+                "Logistics": "",
+                "Manufacturing": "",
+                "Energy": "",
+                "Utilities": "",
+                "Telecommunications": "",
+                "Media": "",
+                "Entertainment": "",
+                "Education": "",
+                "Government": "",
+                "Non-profit": "",
+                "Other": ""
+              }
+            }
+          }
+        },
         "relations": {
           "type": "object",
           "description": "Relationships between the Agent and other objects",
