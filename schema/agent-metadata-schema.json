@@ -21,7 +21,7 @@
             "name",
             "description",
             "owner",
-            "instruction"
+            "instructions"
           ],
           "properties": {
             "agent_id": {
@@ -39,6 +39,10 @@
             "description": {
               "type": "string",
               "description": "A concise summary of the agent's purpose, capabilities, and target user"
+            },
+            "instructions": {
+              "type": "string",
+              "description": "Detailed instructions or guidelines for the agent's behavior, decision-making, and interactions"
             },
             "url": {
               "type": "string",
@@ -62,10 +66,6 @@
             "role": {
               "type": "string",
               "description": "The defined character or communication style that governs its interaction"
-            },
-            "instruction": {
-              "type": "string",
-              "description": "Detailed instructions or guidelines for the agent's behavior, decision-making, and interactions"
             },
             "owner": {
               "type": "string",
@@ -92,7 +92,7 @@
             },
             "cost_center": {
               "type": "string",
-              "description": "Name of the department for cost containment and chargeback"
+              "description": "Name of the department for cost containment and chargeback (this may be another object in the data model)"
             }
           }
         },
@@ -241,10 +241,83 @@
                   "Knowledge Source",
                   "Data Source",
                   "Tool",
-                  "Application",
+                  "AI Model",
                   "MCP Server",
                   "Guardrail",
+                  "Application",
                   "Physical AI"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "ai_use_case": {
+      "type": "object",
+      "description": "AI Use Case definition and attributes.",
+      "required": [
+        "identifier",
+        "name",
+        "description",
+        "owner_name",
+        "function",
+        "problem_statement",
+        "priority",
+        "status"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique reference ID for the AI use case"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the AI use case"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the AI use case"
+        },
+        "proposed_by": {
+          "type": "string",
+          "description": "Name of the person who proposed the AI use case"
+        },
+        "owner_name": {
+          "type": "string",
+          "description": "Name of the business owner of the AI use case"
+        },
+        "function": {
+          "type": "string",
+          "description": "Name of the business function that owns the AI use case"
+        },
+        "problem_statement": {
+          "type": "string",
+          "description": "Detailed description of the business problem addressed by the AI use case"
+        },
+        "expected_benefits": {
+          "type": "string",
+          "description": "Description of the quantitative and qualitative benefits of the AI use case"
+        },
+        "priority": {
+          "type": "string",
+          "description": "Priority assigned to the AI use case (e.g., Critical, High, Medium, Low)"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status of the AI use case (e.g., Assess, Authorize, Build, Test, Deploy, Completed, Cancelled)"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the AI use case and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this AI use case uses",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Agent"
                 ]
               }
             }
@@ -682,78 +755,6 @@
         "model": {
           "type": "string",
           "description": "The name of the model or application that implements the guardrail"
-        }
-      }
-    },
-    "ai_use_case": {
-      "type": "object",
-      "description": "AI Use Case definition and attributes.",
-      "required": [
-        "identifier",
-        "name",
-        "description",
-        "owner_name",
-        "function",
-        "problem_statement",
-        "priority",
-        "status"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique reference ID for the AI use case"
-        },
-        "name": {
-          "type": "string",
-          "description": "The name of the AI use case"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description of the AI use case"
-        },
-        "proposed_by": {
-          "type": "string",
-          "description": "Name of the person who proposed the AI use case"
-        },
-        "owner_name": {
-          "type": "string",
-          "description": "Name of the business owner of the AI use case"
-        },
-        "function": {
-          "type": "string",
-          "description": "Name of the business function that owns the AI use case"
-        },
-        "problem_statement": {
-          "type": "string",
-          "description": "Detailed description of the business problem addressed by the AI use case"
-        },
-        "expected_benefits": {
-          "type": "string",
-          "description": "Description of the quantitative and qualitative benefits of the AI use case"
-        },
-        "priority": {
-          "type": "string",
-          "description": "Priority assigned to the AI use case (e.g., Critical, High, Medium, Low)"
-        },
-        "status": {
-          "type": "string",
-          "description": "Status of the AI use case (e.g., Assess, Authorize, Build, Test, Deploy, Completed, Cancelled)"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the AI use case and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this AI use case uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
-                ]
-              }
-            }
-          }
         }
       }
     },
