@@ -325,50 +325,56 @@
         }
       }
     },
-    "provider": {
-      "type": "object",
-      "description": "Provider definition and attributes.",
-      "required": [
-        "name"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name of the agent's service provider"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the provider and other objects",
-          "properties": {
-            "provides": {
-              "type": "array",
-              "description": "Objects that this provider provides",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Agent"
-                ]
+    "application": {
+      "type": "array",
+      "description": "Application definition and attributes.",
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description",
+          "business_criticality",
+          "emergency_tier"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "A unique reference ID for the application"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the application"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the application"
+          },
+          "business_criticality": {
+            "type": "string",
+            "description": "The criticality of the application to the operation of the business (e.g., Low, Medium, High)"
+          },
+          "emergency_tier": {
+            "type": "string",
+            "description": "The impact to the business if the application is inoperable (e.g., Non-Critical, Business Critical, Mission Critical)"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the application and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this application uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent",
+                    "AI Model"
+                  ]
+                }
               }
             }
           }
-        }
-      }
-    },
-    "llm_model": {
-      "type": "object",
-      "description": "LLM Model definition and attributes.",
-      "required": [
-        "name",
-        "version_number"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The foundational model used by the agent (e.g., gemini-2.5-flash)"
-        },
-        "version_number": {
-          "type": "string",
-          "description": "The version number of the LLM model"
         }
       }
     },
@@ -407,6 +413,53 @@
               "uses": {
                 "type": "array",
                 "description": "Objects that this AI model uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "business_process": {
+      "type": "array",
+      "description": "Business Process definition and attributes.",
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description",
+          "business_criticality"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "The ID of the business process that uses the agent"
+          },
+          "name": {
+            "type": "string",
+            "description": "The human-readable name of the business process"
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description of the business process, its significance and relevance"
+          },
+          "business_criticality": {
+            "type": "string",
+            "description": "The criticality of the process to the operation of the business (e.g., Low, Medium, High)"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the business process and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this business process uses",
                 "items": {
                   "type": "string",
                   "enum": [
@@ -463,72 +516,191 @@
         }
       }
     },
-    "prompt_template": {
+    "provider": {
       "type": "object",
-      "description": "Prompt Template definition and attributes.",
+      "description": "Provider definition and attributes.",
       "required": [
-        "identifier",
-        "name",
-        "description"
+        "name"
       ],
       "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique identifier for the prompt template used to guide LLM behavior"
-        },
         "name": {
           "type": "string",
-          "description": "The name of the prompt template used to guide LLM behavior (e.g., ABC-RAG-Standard-V2)"
+          "description": "Name of the agent's service provider"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the provider and other objects",
+          "properties": {
+            "provides": {
+              "type": "array",
+              "description": "Objects that this provider provides",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Agent"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "llm_model": {
+      "type": "object",
+      "description": "LLM Model definition and attributes.",
+      "required": [
+        "name",
+        "version_number"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The foundational model used by the agent (e.g., gemini-2.5-flash)"
+        },
+        "version_number": {
+          "type": "string",
+          "description": "The version number of the LLM model"
+        }
+      }
+    },
+    "guardrail": {
+      "type": "object",
+      "description": "Guardrail definition and attributes used by the agent.",
+      "required": [
+        "name",
+        "description",
+        "model"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the guardrail used by the agent (e.g., Prompt Injection, Toxic Content, Model Denial-of-Service)"
         },
         "description": {
           "type": "string",
-          "description": "The actual prompts used to guide LLM behavior"
+          "description": "Description of the guardrail"
+        },
+        "model": {
+          "type": "string",
+          "description": "The name of the model or application that implements the guardrail"
         }
       }
     },
-    "memory": {
+    "mcp_server": {
       "type": "object",
-      "description": "Memory definition and attributes.",
+      "description": "MCP Server definition and attributes.",
       "required": [
-        "identifier",
         "name",
-        "type"
+        "url",
+        "version_number"
       ],
       "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A unique identifier for the external system used for long-term data/vector storage"
-        },
         "name": {
           "type": "string",
-          "description": "The name of the external system used for long-term data/vector storage (e.g., Atlas-HR-RAG-VectorDB)"
+          "description": "The name of the MCP server"
         },
-        "type": {
+        "url": {
           "type": "string",
-          "description": "The type of memory storage used (e.g., VECTOR_DB, KEY_VALUE_STORE)"
+          "description": "The URL of the MCP server"
+        },
+        "version_number": {
+          "type": "string",
+          "description": "The version number of the MCP server"
+        },
+        "relations": {
+          "type": "object",
+          "description": "Relationships between the MCP server and other objects",
+          "properties": {
+            "uses": {
+              "type": "array",
+              "description": "Objects that this MCP server uses",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "MCP Server",
+                  "Agent",
+                  "Tool",
+                  "Data Source",
+                  "Knowledge Source",
+                  "Prompt Template"
+                ]
+              }
+            }
+          }
         }
       }
     },
-    "knowledge_source": {
-      "type": "object",
-      "description": "Knowledge Source definition and attributes.",
-      "required": [
-        "identifier",
-        "name",
-        "access_mechanism"
-      ],
-      "properties": {
-        "identifier": {
-          "type": "string",
-          "description": "A Unique ID for the knowledge source"
-        },
-        "name": {
-          "type": "string",
-          "description": "A list of all specific knowledge sources (e.g., databases, documents) the agent can access"
-        },
-        "access_mechanism": {
-          "type": "string",
-          "description": "The protocol or service used to retrieve knowledge (e.g., REST API, SQL connector)"
+    "tool": {
+      "type": "array",
+      "description": "Tool definition and attributes configured for the agent.",
+      "items": {
+        "type": "object",
+        "required": [
+          "identifier",
+          "name",
+          "description"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "A unique reference ID for the tool (e.g., PolicySearchTool)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the tool"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed explanation of the purpose and functionality"
+          },
+          "delegation_possible": {
+            "type": "boolean",
+            "description": "Boolean indicating if the agent can pass the request to another agent"
+          },
+          "allowed_delegates": {
+            "type": "array",
+            "description": "A list of Agent IDs, which the agent is allowed to delegate to",
+            "items": {
+              "type": "string"
+            }
+          },
+          "input_or_output": {
+            "type": "string",
+            "description": "Indicates whether it is an input or output parameter"
+          },
+          "parameter_name": {
+            "type": "string",
+            "description": "Name of the parameter"
+          },
+          "parameter_type": {
+            "type": "string",
+            "description": "Required type and format of the parameter"
+          },
+          "default_value": {
+            "type": "string",
+            "description": "Default value, if any"
+          },
+          "relations": {
+            "type": "object",
+            "description": "Relationships between the tool and other objects",
+            "properties": {
+              "uses": {
+                "type": "array",
+                "description": "Objects that this tool uses",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "Agent",
+                    "Data Source",
+                    "Knowledge Source",
+                    "MCP Server",
+                    "Tool"
+                    
+                  ]
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -601,7 +773,7 @@
           },
           "access_level": {
             "type": "string",
-            "description": "Access Level (READ, WRITE or DELETE)"
+            "description": "READ, WRITE or DELETE"
           },
           "uses_pii": {
             "type": "boolean",
@@ -618,242 +790,72 @@
         }
       }
     },
-    "tool": {
-      "type": "array",
-      "description": "Tool definition and attributes configured for the agent.",
-      "items": {
-        "type": "object",
-        "required": [
-          "identifier",
-          "name",
-          "description"
-        ],
-        "properties": {
-          "identifier": {
-            "type": "string",
-            "description": "A unique reference ID for the tool (e.g., PolicySearchTool)"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the tool"
-          },
-          "description": {
-            "type": "string",
-            "description": "Detailed explanation of the purpose and functionality"
-          },
-          "delegation_possible": {
-            "type": "boolean",
-            "description": "Boolean indicating if the agent can pass the request to another agent"
-          },
-          "allowed_delegates": {
-            "type": "array",
-            "description": "A list of Agent IDs, which the agent is allowed to delegate to",
-            "items": {
-              "type": "string"
-            }
-          },
-          "input_or_output": {
-            "type": "string",
-            "description": "Indicates whether it is an input or output parameter"
-          },
-          "parameter_name": {
-            "type": "string",
-            "description": "Name of the parameter"
-          },
-          "parameter_type": {
-            "type": "string",
-            "description": "Required type and format of the parameter"
-          },
-          "default_value": {
-            "type": "string",
-            "description": "Default value, if any"
-          },
-          "relations": {
-            "type": "object",
-            "description": "Relationships between the tool and other objects",
-            "properties": {
-              "uses": {
-                "type": "array",
-                "description": "Objects that this tool uses",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "Tool",
-                    "Agent",
-                    "MCP Server",
-                    "Data Source",
-                    "Knowledge Source"
-                  ]
-                }
-              }
-            }
-          }
+    "knowledge_source": {
+      "type": "object",
+      "description": "Knowledge Source definition and attributes.",
+      "required": [
+        "identifier",
+        "name",
+        "access_mechanism"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A Unique ID for the knowledge source"
+        },
+        "name": {
+          "type": "string",
+          "description": "A list of all specific knowledge sources (e.g., databases, documents) the agent can access"
+        },
+        "access_mechanism": {
+          "type": "string",
+          "description": "The protocol or service used to retrieve knowledge (e.g., REST API, SQL connector)"
         }
       }
     },
-    "mcp_server": {
+    "prompt_template": {
       "type": "object",
-      "description": "MCP Server definition and attributes.",
+      "description": "Prompt Template definition and attributes.",
       "required": [
+        "identifier",
         "name",
-        "url",
-        "version_number"
+        "description"
       ],
       "properties": {
+        "identifier": {
+          "type": "string",
+          "description": "A unique identifier for the prompt template used to guide LLM behavior"
+        },
         "name": {
           "type": "string",
-          "description": "The name of the MCP server"
-        },
-        "url": {
-          "type": "string",
-          "description": "The URL of the MCP server"
-        },
-        "version_number": {
-          "type": "string",
-          "description": "The version number of the MCP server"
-        },
-        "relations": {
-          "type": "object",
-          "description": "Relationships between the MCP server and other objects",
-          "properties": {
-            "uses": {
-              "type": "array",
-              "description": "Objects that this MCP server uses",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MCP Server",
-                  "Agent",
-                  "Tool",
-                  "Data Source",
-                  "Knowledge Source",
-                  "Prompt Template"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "guardrail": {
-      "type": "object",
-      "description": "Guardrail definition and attributes used by the agent.",
-      "required": [
-        "name",
-        "description",
-        "model"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "The name of the guardrail used by the agent (e.g., Prompt Injection, Toxic Content, Model Denial-of-Service)"
+          "description": "The name of the prompt template used to guide LLM behavior (e.g., ABC-RAG-Standard-V2)"
         },
         "description": {
           "type": "string",
-          "description": "Description of the guardrail"
-        },
-        "model": {
+          "description": "The actual prompts used to guide LLM behavior"
+        }
+      }
+    },
+    "memory": {
+      "type": "object",
+      "description": "Memory definition and attributes.",
+      "required": [
+        "identifier",
+        "name",
+        "type"
+      ],
+      "properties": {
+        "identifier": {
           "type": "string",
-          "description": "The name of the model or application that implements the guardrail"
-        }
-      }
-    },
-    "application": {
-      "type": "array",
-      "description": "Application definition and attributes.",
-      "items": {
-        "type": "object",
-        "required": [
-          "identifier",
-          "name",
-          "description",
-          "business_criticality",
-          "emergency_tier"
-        ],
-        "properties": {
-          "identifier": {
-            "type": "string",
-            "description": "A unique reference ID for the application"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the application"
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the application"
-          },
-          "business_criticality": {
-            "type": "string",
-            "description": "The criticality of the application to the operation of the business (e.g., Low, Medium, High)"
-          },
-          "emergency_tier": {
-            "type": "string",
-            "description": "The impact to the business if the application is inoperable (e.g., Non-Critical, Business Critical, Mission Critical)"
-          },
-          "relations": {
-            "type": "object",
-            "description": "Relationships between the application and other objects",
-            "properties": {
-              "uses": {
-                "type": "array",
-                "description": "Objects that this application uses",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "Agent"
-                  ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "business_process": {
-      "type": "array",
-      "description": "Business Process definition and attributes.",
-      "items": {
-        "type": "object",
-        "required": [
-          "identifier",
-          "name",
-          "description",
-          "business_criticality"
-        ],
-        "properties": {
-          "identifier": {
-            "type": "string",
-            "description": "The ID of the business process that uses the agent"
-          },
-          "name": {
-            "type": "string",
-            "description": "The human-readable name of the business process"
-          },
-          "description": {
-            "type": "string",
-            "description": "A brief description of the business process, its significance and relevance"
-          },
-          "business_criticality": {
-            "type": "string",
-            "description": "The criticality of the process to the operation of the business (e.g., Low, Medium, High)"
-          },
-          "relations": {
-            "type": "object",
-            "description": "Relationships between the business process and other objects",
-            "properties": {
-              "uses": {
-                "type": "array",
-                "description": "Objects that this business process uses",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "Agent"
-                  ]
-                }
-              }
-            }
-          }
+          "description": "A unique identifier for the external system used for long-term data/vector storage"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the external system used for long-term data/vector storage (e.g., Atlas-HR-RAG-VectorDB)"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of memory storage used (e.g., VECTOR_DB, KEY_VALUE_STORE)"
         }
       }
     },
@@ -876,7 +878,7 @@
         },
         "regulatory_authority": {
           "type": "string",
-          "description": "The name of the regulatory authority or governing body (e.g., European Union, NIST)"
+          "description": "The name of the regulatory authority or governing body (e.g., European Union, NIST) - this may very well be another object but managed as an attribute in this specification for convenience "
         },
         "jurisdiction": {
           "type": "string",
@@ -884,7 +886,7 @@
         },
         "requirement": {
           "type": "string",
-          "description": "The name of the requirement from the regulation or framework (e.g., EU AI Act Article 5 - Prohibited AI Practices)"
+          "description": "The name of the requirement from the regulation or framework (e.g., EU AI Act Article 5 - Prohibited AI Practices) - this may very well be another object but managed as an attribute in this specification for convenience"
         },
         "relations": {
           "type": "object",
@@ -896,8 +898,8 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "Control",
                   "AI Use Case",
+                  "Control",
                   "Agent"
                 ]
               }
