@@ -21,6 +21,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Raj Arumugam</td>
+            <td>Entergy</td>
+        </tr>
+        <tr>
             <td>Venkata Atluri</td>
             <td>USAA</td>
         </tr>
@@ -45,8 +49,16 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Kjetil Eritzland</td>
+            <td>Capgemini Norway</td>
+        </tr>
+        <tr>
             <td>Pierre Gomes</td>
             <td>BankUnited</td>
+        </tr>
+        <tr>
+            <td>Vikas Gupta</td>
+            <td>Hindustan Petroleum</td>
         </tr>
         <tr>
             <td>Shawn Harbaugh</td>
