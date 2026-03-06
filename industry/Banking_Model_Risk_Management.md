@@ -4,8 +4,6 @@
 
 The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). While the focus of the Agent Metadata Specification is on agent metadata, this section provides additional attributes that apply to Model Metadata. This section should also apply to use cases outside banking and financial services.
 
-This section is only a stub and will be built out based on future input from industry leaders. Because AI agents are increasingly being used for Model Risk Management in banking, their metadata needs to be captured and their risk assessed appropriately.
-
 ## Conceptual Model Updates
 Banks use models for multiple use cases including credit risk, liquidity risk, and operational risk. These models may be Excel files, AI/ML models, or third-party models. These models may increasingly use agents. Figure 1 shows an overall conceptual model for model risk management in banking.
 
