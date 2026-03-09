@@ -194,7 +194,7 @@ Table 4 summarizes controls that govern an AI model.
       </td>
     </tr>
     <tr>
-      <td>Regulatory &amp; Compliance</td>
+      <td>Regulatory Guidance &amp; Compliance</td>
       <td>
         <ul>
           <li>Intellectual Property Considerations including documentary evidence that IP considerations dealing with training data and retrieving content were addressed</li>
@@ -429,15 +429,15 @@ Banks generally have robust model governance methodologies for in-house models. 
   <em>Table 7: Key considerations for third-party models that use AI agents</em>
 </p>
 
-## Sample Regulations
+## Sample Guidance
 
-Table 8 summarizes regulations that impact AI agents within model risk management in banking.
+Table 8 summarizes guidance that impacts AI agents within model risk management in banking.
 
 <table align="center">
   <thead>
     <tr>
       <th><b>Regulator</b></th>
-      <th><b>Regulation</b></th>
+      <th><b>Guidance</b></th>
     </tr>
   </thead>
   <tbody>
@@ -449,10 +449,18 @@ Table 8 summarizes regulations that impact AI agents within model risk managemen
       <td>U.S. Federal Reserve</td>
       <td><a href="https://www.federalreserve.gov/supervisionreg/srletters/sr1207.htm" target="_blank">SR 12-7: Supervisory Guidance on Stress Testing for Banking Organizations with More Than $10 Billion in Total Consolidated Assets</a></td>
     </tr>
+    <tr>
+      <td>U.S. Department of Treasury</td>
+      <td><a href="https://fsscc.org/wp-content/uploads/2026/02/AIEOG-AI-Lexicon-February-2026.pdf" target=_blank>Artificial Intelligence Executive Oversight Group AI Lexicon</a></td>
+    </tr>
+    <tr>
+      <td>U.S. Department of Treasury</td>
+      <td><a href="https://cyberriskinstitute.org/artificial-intelligence-risk-management/" target=_blank>Financial Services AI Risk Management Framework (FS AI RMF)</a></td>
+    </tr>
   </tbody>
 </table>
 <p align="center">
-  <em>Table 8: Regulations impacting model risk management in banking</em>
+  <em>Table 8: Guidance impacting model risk management in banking</em>
 </p>
 
 ## JSON Schema
