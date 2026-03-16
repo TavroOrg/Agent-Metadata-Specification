@@ -11,7 +11,7 @@ An overall conceptual model for the use case is shown in Figure 1.
 <p align="center">
   <img src="../assets/images/Utilities.png" alt="Utilities" width="600">
   <br>
-  <em>Table 1: Conceptual model for predictive monitoring of transformers in the utilities industry</em>
+  <em>Figure 1: Conceptual model for predictive monitoring of transformers in the utilities industry</em>
 </p>
 
 This example covers the following artifacts (see Table 1):
@@ -26,15 +26,15 @@ This example covers the following artifacts (see Table 1):
   <tbody>
     <tr>
       <td>1. AI Use Case</td>
-      <td><ul><li>Prediction of Transformer Failures</ul></li></td>
+      <td><ul><li>Prediction of Transformer Failures</li></ul></td>
     </tr>
     <tr>
       <td>2. Agent</td>
-      <td><ul><li>Transformer Predictive Monitoring</ul></li></td>
+      <td><ul><li>Transformer Predictive Monitoring</li></ul></td>
     </tr>
     <tr>
       <td>3. Data Sources</td>
-      <td><ul><li>Transformer Outages Table</ul></li></td>
+      <td><ul><li>Transformer Outages Table</li></ul></td>
     </tr>
     <tr>
       <td>4. Tools</td>
@@ -57,7 +57,7 @@ This example covers the following artifacts (see Table 1):
     </tr>
     <tr>
       <td>6. Business Processes</td>
-      <td><ul><li>Enterprise Asset Management</ul></li></td>
+      <td><ul><li>Enterprise Asset Management</li></ul></td>
     </tr>
     <tr>
       <td>7. Regulations</td>
