@@ -285,7 +285,7 @@ Regulatory requirements impacting this use case are summarized in Table 4:
 
 ### 8. Agent Risk Assessment
 
-The Agent Risk Assessment is broken down into two components:
+The Agent Risk Assessment evaluates the Transformer Predictive Monitoring agent across three dimensions: regulatory classification, cybersecurity capability profile, and data risk exposure.. Together these assessments inform the governance controls, human oversight requirements, and deployment safeguards that must accompany this agent in a critical infrastructure context.
 
 #### 8.1 Regulatory Risk Assessment
 
@@ -293,7 +293,7 @@ The agent is flagged under **Critical Infrastructure** (electricity supply), whi
 
 #### 8.2 Cybersecurity Risk Assessment
 
-The OWASP AI Vulnerability Scoring System (AIVSS) Capability Breakdown is 4.0/10 as shown in Table 5.
+The OWASP AI Vulnerability Scoring System (AIVSS) Capability Breakdown is 1.0/10 as shown in Table 5.
 
 <table align="center">
   <thead>
@@ -321,17 +321,17 @@ The OWASP AI Vulnerability Scoring System (AIVSS) Capability Breakdown is 4.0/10
     </tr>
     <tr>
       <td>Dynamic Tool Use</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>No explicit tool use documented</td>
     </tr>
     <tr>
       <td>Memory Use</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>No memory mechanism documented</td>
     </tr>
     <tr>
       <td>Contextual Awareness</td>
-      <td>1.0</td>
+      <td>0.0</td>
       <td>No contextual awareness mechanism documented</td>
     </tr>
     <tr>
