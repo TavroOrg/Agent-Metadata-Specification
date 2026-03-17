@@ -285,7 +285,7 @@ Regulatory requirements impacting this use case are summarized in Table 4:
 
 ### 8. Agent Risk Assessment
 
-The Agent Risk Assessment evaluates the Transformer Predictive Monitoring agent across three dimensions: regulatory classification, cybersecurity capability profile, and data risk exposure.. Together these assessments inform the governance controls, human oversight requirements, and deployment safeguards that must accompany this agent in a critical infrastructure context.
+The Agent Risk Assessment evaluates the Transformer Predictive Monitoring agent across three dimensions: regulatory classification, cybersecurity capability profile, and data risk exposure. Together these assessments inform the governance controls, human oversight requirements, and deployment safeguards that must accompany this agent in a critical infrastructure context.
 
 #### 8.1 Regulatory Risk Assessment
 
