@@ -16,7 +16,7 @@ An overall conceptual model for the use case is shown in Figure 1.
 
 This example covers the following artifacts (see Table 1):
 
-<table>
+<table align="center">
   <tr>
     <th>Artifacts</th>
     <th>Description</th>
@@ -145,7 +145,7 @@ The agent accesses multiple data domains relating to the [OSDU (Open Subsurface 
 
 In OSDU's data model, there are three tiers: Master Data (e.g., Wellbore, Well), Work Product (WP), and Work Product Component (e.g., WellboreTrajectory). A WPC. A WPC is where the real technical data lives. It is always associated with a parent Work Product and references a Master Data entity.
 
-<table>
+<table align="center">
   <tr>
     <th>OSDU Data Domain</th>
     <th>Domain Type</th>
@@ -154,27 +154,27 @@ In OSDU's data model, there are three tiers: Master Data (e.g., Wellbore, Well),
   <tr>
     <td>Wellbore</td>
     <td>Master Data</td>
-    <td>Active wellbore identity, depth, and operational status for all monitored wells.</td>
+    <td>Active wellbore identity, depth, and operational status for all monitored wells</td>
   </tr>
   <tr>
     <td>WellboreTrajectory</td>
     <td>WPC</td>
-    <td>Real-time and planned well path data in WITSML and CSV formats.</td>
+    <td>Real-time and planned well path data in WITSML and CSV formats</td>
   </tr>
   <tr>
     <td>WellLog</td>
     <td>WPC</td>
-    <td>Real-time sensor logs: ROP, WOB, torque, RPM, ECD, gamma ray sourced via WITSML 2.1.</td>
+    <td>Real-time sensor logs: ROP, WOB, torque, RPM, ECD, gamma ray sourced via WITSML 2.1</td>
   </tr>
   <tr>
     <td>MudLog</td>
     <td>WPC</td>
-    <td>Mud weight, viscosity, pit levels, and gas readings for wellbore fluid monitoring.</td>
+    <td>Mud weight, viscosity, pit levels, and gas readings for wellbore fluid monitoring</td>
   </tr>
   <tr>
     <td>DrillReport</td>
     <td>WPC</td>
-    <td>Daily drilling reports and operational event logs; agent writes anomaly and alert events back for traceability.</td>
+    <td>Daily drilling reports and operational event logs; agent writes anomaly and alert events back for traceability</td>
   </tr>
 </table>
 
@@ -186,7 +186,7 @@ In OSDU's data model, there are three tiers: Master Data (e.g., Wellbore, Well),
 
 The Real-Time Drilling Surveillance Agent may use the following tools (see Table 3):
 
-<table>
+<table align="center">
   <tr>
     <th>Tool</th>
     <th>Description</th>
@@ -237,7 +237,7 @@ The Real-Time Drilling Surveillance Agent is used within the following upstream 
 
 The following regulations may govern this agent (see Table 4).
 
-<table>
+<table align="center">
   <tr>
     <th>Regulation</th>
     <th>Requirement</th>
@@ -277,7 +277,7 @@ If the Real-Time Drilling Surveillance Agent fails, the most immediate consequen
 
 Data access is governed by the OSDU Entitlements API and partition-level access controls. This area is considered high risk for the reasons shown in Table 5.
 
-<table>
+<table align="center">
   <tr>
     <th>Data Type</th>
     <th>Sensitivity</th>
@@ -322,7 +322,7 @@ The Real-Time Drilling Surveillance agent is flagged under Critical Infrastructu
 
 The OWASP AI Vulnerability Scoring System (AIVSS) Capability Breakdown is 4.0/10 as shown in Table 6.
 
-<table>
+<table align="center">
   <tr>
     <th>Capability</th>
     <th>Score</th>
