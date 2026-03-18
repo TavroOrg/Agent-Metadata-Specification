@@ -131,6 +131,10 @@ The following individuals are acknowledged for their significant contributions t
     </tbody>
 </table>
 
+# Disclaimer
+
+By contributing to this open-source specification, you represent that you are providing your input, code, or documentation in your personal capacity only. These contributions are not made on behalf of your employer or any other legal entity, and you are not acting as an agent of any entity.
+
 # How to Participate
 
 Thanks for your interest in joining the Agent Metadata Specification Working Group.
