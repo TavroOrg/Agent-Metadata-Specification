@@ -29,6 +29,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>USAA</td>
         </tr>
         <tr>
+            <td>Ashutosh Atre</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
             <td>Val Calvo</td>
             <td>BankUnited</td>
         </tr>
@@ -39,6 +43,10 @@ The following individuals are acknowledged for their significant contributions t
         <tr>
             <td>Joe DeLuca</td>
             <td>Independent Contributor</td>
+        </tr>
+        <tr>
+            <td>Karan Dhawal</td>
+            <td>ZS Associates</td>
         </tr>
         <tr>
             <td>Tony DiPerna</td>

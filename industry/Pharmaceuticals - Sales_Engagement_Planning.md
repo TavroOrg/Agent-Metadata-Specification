@@ -344,4 +344,6 @@ Governance focus should prioritize: (1) ensuring all agent-generated content rem
 
 ## Contributors
 
-Sunil Soares, Tavro AI
+[Karan Dhawal, ZS Associates](https://www.linkedin.com/in/karandhawal/)
+
+[Sunil Soares, Tavro AI](https://www.linkedin.com/in/sunilsoares/)
