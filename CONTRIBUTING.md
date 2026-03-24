@@ -85,6 +85,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>CarMax</td>
         </tr>
         <tr>
+            <td>Michael Koegler</td>
+            <td>Market Alpha Advisors</td>
+        </tr>
+        <tr>
             <td><a href="https://github.com/manirajkumar-tavro" target="_blank">Manirajkumar Kotha</td>
             <td>Tavro AI</td>
         </tr>
