@@ -1,4 +1,4 @@
-INSERT INTO tavro_curated.agent_360
+INSERT INTO catalog_curated.agent_360
 SELECT
     a.agent_id,
     a.agent_name,
@@ -22,13 +22,13 @@ SELECT
     ra.blended_risk_class AS latest_risk_class,
     ge.status AS latest_event_status,
     current_timestamp AS snapshot_ts
-FROM tavro_core.agents a
-LEFT JOIN tavro_core.agent_configurations c
+FROM catalog_core.agents a
+LEFT JOIN catalog_core.agent_configurations c
   ON a.agent_id = c.agent_id
  AND c.is_current = true
 LEFT JOIN (
     SELECT agent_id, COUNT(*) AS tool_count
-    FROM tavro_core.agent_tools
+    FROM catalog_core.agent_tools
     GROUP BY agent_id
 ) t
   ON a.agent_id = t.agent_id
@@ -39,7 +39,7 @@ LEFT JOIN (
       max(CASE WHEN contains_pii THEN true ELSE false END) AS contains_pii,
       max(CASE WHEN contains_phi THEN true ELSE false END) AS contains_phi,
       max(CASE WHEN contains_pci THEN true ELSE false END) AS contains_pci
-    FROM tavro_core.agent_data_sources
+    FROM catalog_core.agent_data_sources
     GROUP BY agent_id
 ) ds
   ON a.agent_id = ds.agent_id
@@ -48,7 +48,7 @@ LEFT JOIN (
       agent_id,
       COUNT(*) AS business_application_count,
       max(CASE WHEN is_primary THEN application_name ELSE NULL END) AS primary_business_application_name
-    FROM tavro_core.agent_business_applications
+    FROM catalog_core.agent_business_applications
     GROUP BY agent_id
 ) ba
   ON a.agent_id = ba.agent_id
@@ -57,7 +57,7 @@ LEFT JOIN (
       agent_id,
       COUNT(*) AS business_process_count,
       max(CASE WHEN is_primary THEN process_name ELSE NULL END) AS primary_business_process_name
-    FROM tavro_core.agent_business_processes
+    FROM catalog_core.agent_business_processes
     GROUP BY agent_id
 ) bp
   ON a.agent_id = bp.agent_id
@@ -67,16 +67,16 @@ LEFT JOIN (
       COUNT(*) AS ai_model_count,
       max(CASE WHEN is_primary_model THEN model_name ELSE NULL END) AS primary_ai_model_name,
       max(CASE WHEN is_primary_model THEN model_provider ELSE NULL END) AS primary_ai_model_provider
-    FROM tavro_core.agent_ai_models
+    FROM catalog_core.agent_ai_models
     GROUP BY agent_id
 ) am
   ON a.agent_id = am.agent_id
-LEFT JOIN tavro_core.agent_risk_assessments ra
+LEFT JOIN catalog_core.agent_risk_assessments ra
   ON a.agent_id = ra.agent_id
  AND ra.is_current = true
 LEFT JOIN (
     SELECT agent_id, max_by(status, event_ts) AS status
-    FROM tavro_core.agent_governance_events
+    FROM catalog_core.agent_governance_events
     GROUP BY agent_id
 ) ge
   ON a.agent_id = ge.agent_id

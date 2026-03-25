@@ -1,4 +1,4 @@
-INSERT INTO tavro_curated.agent_risk_dashboard
+INSERT INTO catalog_curated.agent_risk_dashboard
 SELECT
     a.agent_id,
     a.agent_name,
@@ -16,15 +16,15 @@ SELECT
     COALESCE(ba.business_application_count, 0) AS business_application_count,
     COALESCE(bp.business_process_count, 0) AS business_process_count,
     current_timestamp AS snapshot_ts
-FROM tavro_core.agents a
-JOIN tavro_core.agent_risk_assessments ra
+FROM catalog_core.agents a
+JOIN catalog_core.agent_risk_assessments ra
   ON a.agent_id = ra.agent_id
  AND ra.is_current = true
 LEFT JOIN (
     SELECT
       agent_id,
       max(CASE WHEN is_primary_model THEN model_name ELSE NULL END) AS primary_ai_model_name
-    FROM tavro_core.agent_ai_models
+    FROM catalog_core.agent_ai_models
     GROUP BY agent_id
 ) am
   ON a.agent_id = am.agent_id
@@ -33,7 +33,7 @@ LEFT JOIN (
       agent_id,
       COUNT(*) AS business_application_count,
       max(CASE WHEN is_primary THEN application_name ELSE NULL END) AS primary_business_application_name
-    FROM tavro_core.agent_business_applications
+    FROM catalog_core.agent_business_applications
     GROUP BY agent_id
 ) ba
   ON a.agent_id = ba.agent_id
@@ -42,7 +42,7 @@ LEFT JOIN (
       agent_id,
       COUNT(*) AS business_process_count,
       max(CASE WHEN is_primary THEN process_name ELSE NULL END) AS primary_business_process_name
-    FROM tavro_core.agent_business_processes
+    FROM catalog_core.agent_business_processes
     GROUP BY agent_id
 ) bp
   ON a.agent_id = bp.agent_id
