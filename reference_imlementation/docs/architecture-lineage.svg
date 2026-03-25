@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520">
+  <defs>
+    <style>
+      .box { fill: #f7fbff; stroke: #1f4e79; stroke-width: 2; rx: 10; ry: 10; }
+      .title { font: 600 20px Arial, sans-serif; fill: #0b2740; }
+      .text { font: 16px Arial, sans-serif; fill: #0b2740; }
+      .small { font: 14px Arial, sans-serif; fill: #0b2740; }
+      .sec { fill: #fff8e8; stroke: #8a6d3b; stroke-width: 2; rx: 10; ry: 10; }
+      .line { stroke: #1f4e79; stroke-width: 2.5; fill: none; }
+      .dashed { stroke: #666; stroke-width: 2; stroke-dasharray: 7 6; fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0,0 12,4 0,8" fill="#1f4e79"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0,0 12,4 0,8" fill="#666"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="36" class="title">AWS Data Lineage (Agent Metadata)</text>
+
+  <rect class="box" x="30" y="90" width="220" height="80"/>
+  <text class="text" x="52" y="128">Source Systems</text>
+  <text class="small" x="52" y="150">Producers / Apps</text>
+
+  <rect class="box" x="300" y="70" width="320" height="120"/>
+  <text class="text" x="322" y="108">S3 Inbound JSON</text>
+  <text class="small" x="322" y="132">s3://catalog-prod/raw/agent-cards/</text>
+  <text class="small" x="322" y="154">Raw agent card files</text>
+
+  <rect class="box" x="670" y="70" width="280" height="120"/>
+  <text class="text" x="692" y="108">Glue PySpark ETL</text>
+  <text class="small" x="692" y="132">agent_card_ingest_job.py</text>
+  <text class="small" x="692" y="154">Parse + transform + merge</text>
+
+  <rect class="box" x="1000" y="70" width="260" height="120"/>
+  <text class="text" x="1022" y="112">Glue Catalog +</text>
+  <text class="text" x="1022" y="136">Iceberg Storage</text>
+  <text class="small" x="1022" y="160">Metadata + data layer</text>
+
+  <rect class="box" x="1300" y="70" width="170" height="120"/>
+  <text class="text" x="1320" y="108">Athena</text>
+  <text class="small" x="1320" y="132">SQL + ELT</text>
+  <text class="small" x="1320" y="154">Core/Curated</text>
+
+  <rect class="box" x="1300" y="250" width="170" height="90"/>
+  <text class="text" x="1320" y="286">Consumers</text>
+  <text class="small" x="1320" y="310">Apps / APIs / BI</text>
+
+  <rect class="sec" x="300" y="300" width="170" height="80"/>
+  <text class="text" x="328" y="336">IAM</text>
+  <text class="small" x="328" y="358">Access control</text>
+
+  <rect class="sec" x="500" y="300" width="170" height="80"/>
+  <text class="text" x="528" y="336">KMS</text>
+  <text class="small" x="528" y="358">Encryption</text>
+
+  <line class="line" x1="250" y1="130" x2="296" y2="130" marker-end="url(#arrow)"/>
+  <line class="line" x1="620" y1="130" x2="666" y2="130" marker-end="url(#arrow)"/>
+  <line class="line" x1="950" y1="130" x2="996" y2="130" marker-end="url(#arrow)"/>
+  <line class="line" x1="1260" y1="130" x2="1296" y2="130" marker-end="url(#arrow)"/>
+  <line class="line" x1="1385" y1="190" x2="1385" y2="246" marker-end="url(#arrow)"/>
+
+  <line class="dashed" x1="385" y1="300" x2="385" y2="190" marker-end="url(#arrowGray)"/>
+  <line class="dashed" x1="585" y1="300" x2="585" y2="190" marker-end="url(#arrowGray)"/>
+
+  <text class="small" x="322" y="214">policy</text>
+  <text class="small" x="500" y="214">encryption</text>
+</svg>
