@@ -358,7 +358,7 @@ The Agent Risk Assessment maps into regulatory and cybersecurity components.
 
 The agent has been assessed under the EU AI Act and classified as 'Other' — meaning it does not fall within the prohibited practices of Article 5 or the high-risk categories of Article 6. The agent processes financial documents and extracts identifiers such as CUSIP, ISIN, issuer legal name, and LEI, which are considered financial identifiers rather than personal data. No evidence of PHI or PCI usage was found. None of the Article 5 prohibited practices or Article 6 high-risk categories are triggered based on the agent's description and properties.
 
-## 8.2 Cybersecurity Risk Assessment
+### 8.2 Cybersecurity Risk Assessment
 
 The agent was assessed using the OWASP AI Agent Vulnerability Scoring System (AIVSS v0.5), yielding an overall AIVSS score of 2.9/10 and an Agentic Autonomous Risk Score (AARS) of 3.5 (see Table 6). The low overall score is primarily driven by low autonomy, no self-modification, and limited dynamic tool use, with all exception tasks requiring human review.
 
