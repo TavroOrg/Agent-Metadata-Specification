@@ -124,7 +124,7 @@ The use case deploys a single Securitized Product Data Quality Agent that perfor
 5. Discrepancy Classification: Apply the validation rule engine to classify discrepancies by severity: Critical, High, Medium, or Informational.
 6. Exception Reporting: Generate structured exception reports with document citations (page and section references).
 7. Analyst Task Creation: For Critical and High discrepancies, automatically create analyst tasks in the operations workflow system.
-8. Data Lineage Logging: Maintain a complete, auditable log of every extraction, mapping, and validation action for BCBS 239 compliance.
+8. Data Lineage Logging: Maintain a complete, auditable log of every extraction, mapping, and validation action.
 
 By automating this workflow, the use case reduces manual analyst effort, accelerates time-to-data for newly issued securities. Critically, no source system records are auto-corrected; all changes require explicit human approval, preserving analyst oversight and control.
 
@@ -253,7 +253,7 @@ The Agent uses the following tools (see Table 3):
     </tr>
     <tr>
       <td><code>data_lineage_logging_service</code></td>
-      <td>Logs all extraction, mapping, and validation actions with document citations for BCBS 239 audit trail compliance</td>
+      <td>Logs all extraction, mapping, and validation actions with document citations</td>
     </tr>
   </tbody>
 </table>
@@ -419,7 +419,7 @@ The agent was assessed using the OWASP AI Agent Vulnerability Scoring System (AI
     <tr>
       <td>Opacity &amp; Reflexivity</td>
       <td>0.5</td>
-      <td>Maintains an auditable log of all actions and decisions for BCBS 239 compliance, but does not expose full step-by-step internal reasoning for every inference.</td>
+      <td>Maintains an auditable log of all actions and decisions, but does not expose full step-by-step internal reasoning for every inference.</td>
     </tr>
   </tbody>
 </table>
