@@ -192,7 +192,7 @@ The agent accesses the following data tables and repositories (see Table 2):
   </tbody>
 </table>
 <p align="center">
-  <em>Table 2: Data sources for Securitized Data Quality Agent</em>
+  <em>Table 2: Data sources for Securitized Product Data Quality Agent</em>
 </p>
 
 ## 4. Tools
@@ -258,7 +258,7 @@ The Agent uses the following tools (see Table 3):
   </tbody>
 </table>
 <p align="center">
-  <em>Table 3: Tools used by the Securitized Data Quality Agent</em>
+  <em>Table 3: Tools used by the Securitized Product Data Quality Agent</em>
 </p>
 
 ## 5. Applications
@@ -300,7 +300,7 @@ The Agent uses the following applications (see Table 4):
   </tbody>
 </table>
 <p align="center">
-  <em>Table 4: Applications used by the Securitized Data Quality Agent</em>
+  <em>Table 4: Applications used by the Securitized Product Data Quality Agent</em>
 </p>
 
 ## 6. Business Processes – Concentration Risk Assessment / Securitized Product Onboarding
