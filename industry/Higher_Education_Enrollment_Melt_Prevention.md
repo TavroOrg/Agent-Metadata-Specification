@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The cross-industry Agent Metadata Specification is published here. This section provides an example that combines all the relevant artifacts for higher education enrollment melt prevention and yield optimization.
+The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). This section provides an example that combines all the relevant artifacts for higher education enrollment melt prevention and yield optimization.
 
 ## Conceptual Model
 
