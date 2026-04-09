@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Pharmaceuticals – Sales Engagement Planning Assistant.png" alt="Pharmaceuticals – Sales Engagement Planning Assistant" width="600">
+  <img src="../../assets/images/Pharmaceuticals%20%E2%80%93%20Sales%20Engagement%20Planning%20Assistant.png" alt="Pharmaceuticals – Sales Engagement Planning Assistant" width="600">
   <br>
   <em>Figure 1: Conceptual model for sales engagement planning for the pharmaceuticals industry</em>
 </p>

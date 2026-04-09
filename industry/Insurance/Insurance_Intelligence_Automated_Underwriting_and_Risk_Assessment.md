@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Life Insurance– Intelligent Automated Underwriting & Risk Assessment for Life Insurance.png" alt="Life Insurance– Intelligent Automated Underwriting & Risk Assessment for Life Insurance" width="600">
+  <img src="../../assets/images/Life%20Insurance%E2%80%93%20Intelligent%20Automated%20Underwriting%20%26%20Risk%20Assessment%20for%20Life%20Insurance.png" alt="Life Insurance– Intelligent Automated Underwriting & Risk Assessment for Life Insurance" width="600">
   <br>
   <em>Figure 1: Conceptual model for the Insurance Underwriting Intake & Risk Intelligence Agent</em>
 </p>

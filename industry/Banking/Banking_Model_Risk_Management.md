@@ -8,7 +8,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 Banks use models for multiple use cases including credit risk, liquidity risk, and operational risk. These models may be Excel files, AI/ML models, or third-party models. These models may increasingly use agents. Figure 1 shows an overall conceptual model for model risk management in banking.
 
 <p align="center">
-  <img src="../assets/images/Banking Model Risk Management.png" alt="Banking Model Risk Management" width="600">
+  <img src="../../assets/images/Banking Model Risk Management.png" alt="Banking Model Risk Management" width="600">
   <br>
   <em>Figure 1: Conceptual model for model risk management in banking</em>
 </p>

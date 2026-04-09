@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Higher Education –  Higher Education Enrollment Melt Orchestrator Agent.png" alt="Higher Education –  Higher Education Enrollment Melt Orchestrator Agent" width="600">
+  <img src="../../assets/images/Higher%20Education%20%E2%80%93%20%20Higher%20Education%20Enrollment%20Melt%20Orchestrator%20Agent.png" alt="Higher Education –  Higher Education Enrollment Melt Orchestrator Agent" width="600">
   <br>
   <em>Figure 1: Conceptual model for AI-powered enrollment melt prevention for higher education</em>
 </p>

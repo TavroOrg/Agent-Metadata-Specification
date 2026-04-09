@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Investment Management – AI-Driven Data Quality Checks For Securitized Products.png" alt="Investment Management – AI-Driven Data Quality Checks For Securitized Products" width="600" >
+  <img src="../../assets/images/Investment%20Management%20%E2%80%93%20AI-Driven%20Data%20Quality%20Checks%20For%20Securitized%20Products.png" alt="Investment Management – AI-Driven Data Quality Checks For Securitized Products" width="600" >
   <br>
   <em>Figure 1: Conceptual model for AI-driven data quality checks for securitized products using unstructured data</em>
 </p>
