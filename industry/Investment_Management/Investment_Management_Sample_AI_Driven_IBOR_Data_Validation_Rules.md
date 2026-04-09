@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). In another [section](https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/industry/Investment%20Management%20-%20AI-Driven%20Data%20Quality%20Checks%20on%20Securitized%20Products.md), we also covered all the relevant artifacts for AI-driven data quality checks for securitized products in the investment management industry. In this section, we discuss sample AI-Driven Data Validation Rules for IBOR applications like Aladdin and Charles River.
+The cross-industry Agent Metadata Specification is published [here](https://github.com/TavroOrg/Agent-Metadata-Specification/tree/main/assets/Publications). In another [section](https://github.com/TavroOrg/Agent-Metadata-Specification/blob/main/industry/Investment_Management/Investment%20Management%20-%20AI-Driven%20Data%20Quality%20Checks%20on%20Securitized%20Products.md), we also covered all the relevant artifacts for AI-driven data quality checks for securitized products in the investment management industry. In this section, we discuss sample AI-Driven Data Validation Rules for IBOR applications like Aladdin and Charles River.
 
 Summary Table - IBOR Critical Data Element (CDE)
 
