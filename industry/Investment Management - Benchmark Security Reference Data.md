@@ -66,14 +66,14 @@ This example covers the following artifacts (see Table 1):
 The AI Use Case addresses the challenge of enriching benchmark-only fixed income securities that lack sufficient reference data. As portfolio optimization models and straight-through processing (STP) workflows become increasingly central to investment operations, the demand for accurate and comprehensive benchmark security data has grown substantially. However, validating these securities through traditional data-vendor services such as Bloomberg or ICE introduces significant cost overhead.
 
 The use case deploys a single Benchmark Data Enrichment Agent that performs the following automated pipeline:
-<li>Document Ingestion: Parse and extract text from PDF offering documents including prospectuses, term sheets, and offering memoranda via NLP and LLM-based document intelligence.</li>
-<li>Field Extraction: Identify and extract all available fixed income reference data fields including CUSIP, ISIN, coupon rate, maturity date, currency, seniority, call schedule, day count convention, issue size, settlement convention, business day convention, governing law, and listing exchange.</li>
-<li>Comparable Security Matching: Query the firm's holdings and security master to identify comparable securities from the same issuer, ranked by issuer match, seniority, currency, and tenor proximity.</li>
-<li>Rule-Governed Inheritance: Apply a configurable inheritance ruleset to safely populate remaining gaps using comparable security data, restricted to safe-to-inherit fields only.</li>
-<li>Confidence Scoring: Assign a confidence score (High / Medium / Low) to each populated field and flag Low-confidence values for mandatory analyst review.</li>
-<li>Human-in-the-Loop Staging: Write enriched records to a review queue with full field-level provenance. No production writes occur without explicit analyst approval.</li>
-<li>Security Master Write-Back: Upon approval, commit enriched values to the security master with full provenance tagging, operator ID, and timestamp logging.</li>
-<li>Audit Logging: Maintain a complete, append-only audit trail of every extraction, inheritance, staging, approval, and override action for regulatory compliance.</li>
+- Document Ingestion: Parse and extract text from PDF offering documents including prospectuses, term sheets, and offering memoranda via NLP and LLM-based document intelligence.
+- Field Extraction: Identify and extract all available fixed income reference data fields including CUSIP, ISIN, coupon rate, maturity date, currency, seniority, call schedule, day count convention, issue size, settlement convention, business day convention, governing law, and listing exchange.
+- Comparable Security Matching: Query the firm's holdings and security master to identify comparable securities from the same issuer, ranked by issuer match, seniority, currency, and tenor proximity.
+- Rule-Governed Inheritance: Apply a configurable inheritance ruleset to safely populate remaining gaps using comparable security data, restricted to safe-to-inherit fields only.
+- Confidence Scoring: Assign a confidence score (High / Medium / Low) to each populated field and flag Low-confidence values for mandatory analyst review.
+- Human-in-the-Loop Staging: Write enriched records to a review queue with full field-level provenance. No production writes occur without explicit analyst approval.
+- Security Master Write-Back: Upon approval, commit enriched values to the security master with full provenance tagging, operator ID, and timestamp logging.
+- Audit Logging: Maintain a complete, append-only audit trail of every extraction, inheritance, staging, approval, and override action for regulatory compliance.
 
 By automating this workflow, the use case reduces manual analyst effort, eliminates per-query data vendor costs for benchmark securities, and accelerates time-to-data for newly issued instruments. No source system records are auto-corrected — all changes require explicit human approval, preserving analyst oversight and control.
 
@@ -88,25 +88,25 @@ The agent operates under a strict read-then-stage-then-write control pattern and
 ### Agent Instructions
 The agent operates under a ten-step instruction set:
 
-  Step 1: On trigger (manual submission or scheduled batch), retrieve the offering document for the target benchmark security from the document store.
+Step 1: On trigger (manual submission or scheduled batch), retrieve the offering document for the target benchmark security from the document store.
 
-  Step 2: Parse the document using the Document Intelligence LLM Parser to extract all available fixed income reference data fields. Prioritize direct extraction over inheritance for every field.
+Step 2: Parse the document using the Document Intelligence LLM Parser to extract all available fixed income reference data fields. Prioritize direct extraction over inheritance for every field.
 
-  Step 3: For fields not found in the document, query holdings and security master databases for securities from the same issuer. Rank comparables by issuer match, seniority, currency, and tenor proximity.
+Step 3: For fields not found in the document, query holdings and security master databases for securities from the same issuer. Rank comparables by issuer match, seniority, currency, and tenor proximity.
 
-  Step 4: Apply the inheritance ruleset — inherit only safe-to-inherit fields (settlement convention, day count convention, business day convention, governing law). Do NOT inherit pricing, spread, coupon, maturity, call schedule, or issue size from comparables.
+Step 4: Apply the inheritance ruleset — inherit only safe-to-inherit fields (settlement convention, day count convention, business day convention, governing law). Do NOT inherit pricing, spread, coupon, maturity, call schedule, or issue size from comparables.
 
-  Step 5: Assign a confidence score (High / Medium / Low) to each populated field. Flag Low-confidence fields for mandatory analyst review.
+Step 5: Assign a confidence score (High / Medium / Low) to each populated field. Flag Low-confidence fields for mandatory analyst review.
 
-  Step 6: Write the enriched record to the staging review queue with full field-level provenance: document page/section, comparable CUSIP used, inheritance rule applied, or manual entry flag.
+Step 6: Write the enriched record to the staging review queue with full field-level provenance: document page/section, comparable CUSIP used, inheritance rule applied, or manual entry flag.
 
-  Step 7: Notify the assigned analyst that a record is ready for review. Do not write to production until explicit approval is received from a credentialed analyst.
+Step 7: Notify the assigned analyst that a record is ready for review. Do not write to production until explicit approval is received from a credentialed analyst.
 
-  Step 8: On approval, write approved field values to the security master via the Security Master Write API. Log operator ID, timestamp, field-level overrides, and final provenance.
+Step 8: On approval, write approved field values to the security master via the Security Master Write API. Log operator ID, timestamp, field-level overrides, and final provenance.
 
-  Step 9: On rejection or override, update the staging record with analyst corrections and log all changes for audit trail and model retraining feedback.
+Step 9: On rejection or override, update the staging record with analyst corrections and log all changes for audit trail and model retraining feedback.
   
-  Step 10: Never bypass the human approval gate under any circumstances, including automated batch runs.
+Step 10: Never bypass the human approval gate under any circumstances, including automated batch runs.
 
 ## 3. Data Sources
 The agent accesses the following data sources (see Table 2):
@@ -229,11 +229,11 @@ The agent interacts with the following downstream applications (see Table 4):
 ## 6. Business Processes
 The Benchmark Data Enrichment Agent impacts the following operational processes:
 
-<li>Benchmark Security Reference Data Onboarding — The agent intercepts the manual data entry step, extracts fields from offering documents, and flags gaps before they reach source systems, transforming onboarding from a manual exercise into an automated extraction pipeline.</li>
-<li>Security Master Maintenance — Continuously enriches and validates benchmark security records in the security master, reducing the backlog of securities with incomplete reference data.</li>
-<li>Portfolio Optimization Data Preparation — Provides the optimization model with complete, timely benchmark data, reducing securities excluded from optimization runs due to missing fields.</li>
-<li>Straight-Through Processing (STP) — Accelerates time-to-STP-ready for newly issued benchmark securities by automating the data enrichment step that currently delays STP eligibility.</li>
-<li>Data Vendor Cost Management — Reduces reliance on Bloomberg and ICE queries for benchmark security validation by extracting attributes directly from authoritative source documents.</li>
+- Benchmark Security Reference Data Onboarding — The agent intercepts the manual data entry step, extracts fields from offering documents, and flags gaps before they reach source systems, transforming onboarding from a manual exercise into an automated extraction pipeline.
+- Security Master Maintenance — Continuously enriches and validates benchmark security records in the security master, reducing the backlog of securities with incomplete reference data.
+- Portfolio Optimization Data Preparation — Provides the optimization model with complete, timely benchmark data, reducing securities excluded from optimization runs due to missing fields.
+- Straight-Through Processing (STP) — Accelerates time-to-STP-ready for newly issued benchmark securities by automating the data enrichment step that currently delays STP eligibility.
+- Data Vendor Cost Management — Reduces reliance on Bloomberg and ICE queries for benchmark security validation by extracting attributes directly from authoritative source documents.
 
 ## 7. Regulations
 The following regulations govern this agent (see Table 5):
