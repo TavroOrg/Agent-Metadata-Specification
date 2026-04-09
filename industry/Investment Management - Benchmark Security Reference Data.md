@@ -88,25 +88,25 @@ The agent operates under a strict read-then-stage-then-write control pattern and
 ### Agent Instructions
 The agent operates under a ten-step instruction set:
 
-Step 1: On trigger (manual submission or scheduled batch), retrieve the offering document for the target benchmark security from the document store.
+- Step 1: On trigger (manual submission or scheduled batch), retrieve the offering document for the target benchmark security from the document store.
 
-Step 2: Parse the document using the Document Intelligence LLM Parser to extract all available fixed income reference data fields. Prioritize direct extraction over inheritance for every field.
+- Step 2: Parse the document using the Document Intelligence LLM Parser to extract all available fixed income reference data fields. Prioritize direct extraction over inheritance for every field.
 
-Step 3: For fields not found in the document, query holdings and security master databases for securities from the same issuer. Rank comparables by issuer match, seniority, currency, and tenor proximity.
+- Step 3: For fields not found in the document, query holdings and security master databases for securities from the same issuer. Rank comparables by issuer match, seniority, currency, and tenor proximity.
 
-Step 4: Apply the inheritance ruleset — inherit only safe-to-inherit fields (settlement convention, day count convention, business day convention, governing law). Do NOT inherit pricing, spread, coupon, maturity, call schedule, or issue size from comparables.
+- Step 4: Apply the inheritance ruleset — inherit only safe-to-inherit fields (settlement convention, day count convention, business day convention, governing law). Do NOT inherit pricing, spread, coupon, maturity, call schedule, or issue size from comparables.
 
-Step 5: Assign a confidence score (High / Medium / Low) to each populated field. Flag Low-confidence fields for mandatory analyst review.
+- Step 5: Assign a confidence score (High / Medium / Low) to each populated field. Flag Low-confidence fields for mandatory analyst review.
 
-Step 6: Write the enriched record to the staging review queue with full field-level provenance: document page/section, comparable CUSIP used, inheritance rule applied, or manual entry flag.
+- Step 6: Write the enriched record to the staging review queue with full field-level provenance: document page/section, comparable CUSIP used, inheritance rule applied, or manual entry flag.
 
-Step 7: Notify the assigned analyst that a record is ready for review. Do not write to production until explicit approval is received from a credentialed analyst.
+- Step 7: Notify the assigned analyst that a record is ready for review. Do not write to production until explicit approval is received from a credentialed analyst.
 
-Step 8: On approval, write approved field values to the security master via the Security Master Write API. Log operator ID, timestamp, field-level overrides, and final provenance.
+- Step 8: On approval, write approved field values to the security master via the Security Master Write API. Log operator ID, timestamp, field-level overrides, and final provenance.
 
-Step 9: On rejection or override, update the staging record with analyst corrections and log all changes for audit trail and model retraining feedback.
+- Step 9: On rejection or override, update the staging record with analyst corrections and log all changes for audit trail and model retraining feedback.
   
-Step 10: Never bypass the human approval gate under any circumstances, including automated batch runs.
+- Step 10: Never bypass the human approval gate under any circumstances, including automated batch runs.
 
 ## 3. Data Sources
 The agent accesses the following data sources (see Table 2):
