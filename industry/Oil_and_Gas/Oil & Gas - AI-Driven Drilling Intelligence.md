@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Oil & Gas – AI-Driven Drilling Intelligence.png" alt="Oil & Gas – AI-Driven Drilling Intelligence" width="600" >
+  <img src="../../assets/images/Oil%20%26%20Gas%20%E2%80%93%20AI-Driven%20Drilling%20Intelligence.png" alt="Oil & Gas – AI-Driven Drilling Intelligence" width="600" >
   <br>
   <em>Figure 1: Conceptual model for AI-driven drilling intelligence in the oil and gas industry</em>
 </p>
@@ -264,7 +264,7 @@ The following regulations may govern this agent (see Table 4).
 [ORX](https://orx.org/) provides an overall framework for operational risk. The Agent Risk Assessment maps into six operational risk events within the ORX taxonomy (see Figure 2).
 
 <p align="center">
-  <img src="../assets/images/AI-Driven Drilling Surveillance Agent Operational Risk.png" alt="AI-Driven Drilling Surveillance Agent Operational Risk" width="600" >
+  <img src="../../assets/images/AI-Driven Drilling Surveillance Agent Operational Risk.png" alt="AI-Driven Drilling Surveillance Agent Operational Risk" width="600" >
   <br>
   <em>Figure 2: Mapping of agent risk assessment into ORX operational risk taxonomy</em>
 </p>

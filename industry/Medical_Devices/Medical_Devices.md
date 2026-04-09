@@ -10,7 +10,7 @@ AI agents may be integrated with standalone software programs or with physical h
 Figure 1 shows key areas where the overall agent data model needs to be customized for the medical device industry.
 
 <p align="center">
-  <img src="../assets/images/Medical Devices.png" alt="Medical Devices" width="300" >
+  <img src="../../assets/images/Medical Devices.png" alt="Medical Devices" width="300" >
   <br>
   <em>Figure 1: Key aspects of agent metadata for the medical device industry</em>
 </p>

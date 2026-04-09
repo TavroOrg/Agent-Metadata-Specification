@@ -9,7 +9,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Utilities.png" alt="Utilities" width="600">
+  <img src="../../assets/images/Utilities.png" alt="Utilities" width="600">
   <br>
   <em>Figure 1: Conceptual model for predictive monitoring of transformers in the utilities industry</em>
 </p>

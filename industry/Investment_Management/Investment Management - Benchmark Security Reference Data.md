@@ -8,7 +8,7 @@ The cross-industry Agent Metadata Specification is published [here](https://gith
 An overall conceptual model for the use case is shown in Figure 1.
 
 <p align="center">
-  <img src="../assets/images/Investment Management - Benchmark Security Reference Data.png" alt="Investment Management" width="600">
+  <img src="../../assets/images/Investment Management - Benchmark Security Reference Data.png" alt="Investment Management" width="600">
   <br>
   <em>Figure 1: Conceptual model for AI-driven data quality checks for Benchmark Security Reference Data Enrichment via AI Document Parsing</em>
 </p>

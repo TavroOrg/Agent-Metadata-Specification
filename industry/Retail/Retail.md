@@ -11,7 +11,7 @@ Retailers may deploy thousands of devices across their stores that perform funct
 The cross-industry Agent Metadata Specification discusses a taxonomy of Agent Cards that may be based on Google’s Agent2Agent (A2A) protocol. This concept of Agent Cards needs to be elevated to address broader agent risk considerations including for Physical AI (devices) as shown in Figure 1. This approach would facilitate a unified view of agent risk for a given device.
 
 <p align="center">
-  <img src="../assets/images/Agent Card Taxonomy.png" alt="Medical Devices" width="600" >
+  <img src="../../assets/images/Agent Card Taxonomy.png" alt="Medical Devices" width="600" >
   <br>
   <em>Figure 1: Taxonomy of agent cards</em>
 </p>
