@@ -27,7 +27,7 @@ This example covers the following artifacts (Table 1):
       <td>1. AI Use Case</td>
       <td>
       <ul>
-        <li>AI-Driven Data Quality Checks for Syndicated Bank Loans</li>
+        <li>AI-Driven Data Quality Checks for Syndicated Bank Loans Using Unstructured Data Extracted from Documents</li>
       </ul>
     </tr>
     <tr>
@@ -130,9 +130,9 @@ The AI Use Case addresses a critical operational challenge in the Credit & Lendi
 Credit agreements for syndicated bank loans are among the most error-prone documents in financial services. These agreements regularly span hundreds of pages, incorporate multiple amendment overlays, and require precise interpretation of rate mechanics — including SOFR compounding conventions, margin grids, credit spread adjustments, and fallback language per ARRC/ISDA guidelines — that must be entered consistently across Loan Administration Systems, General Ledger, and downstream risk systems.
 
 Manual extraction and data entry introduces three compounding problems:
-<li>High error frequency — data defect rates of approximately 3% per 1,000 loans booked, driven by document complexity, ambiguous clause language, and the volume of amendment overlays that must be reconciled against original terms.</li>
-<li>Late error detection — mistakes are typically discovered only at rate reset, settlement, or regulatory examination, by which point the error has already propagated across multiple systems and reporting periods.</li>
-<li>Extremely high remediation cost — each identified error requires back-office investigation, system correction, accrual recalculation, counterparty notification, and in many cases regulatory disclosure. Individual incidents routinely cost $50,000–$250,000 to fully remediate; at portfolio scale, annual remediation exposure can exceed $5–10 million.</li>
+- High error frequency — data defect rates of approximately 3% per 1,000 loans booked, driven by document complexity, ambiguous clause language, and the volume of amendment overlays that must be reconciled against original terms.
+- Late error detection — mistakes are typically discovered only at rate reset, settlement, or regulatory examination, by which point the error has already propagated across multiple systems and reporting periods.
+- Extremely high remediation cost — each identified error requires back-office investigation, system correction, accrual recalculation, counterparty notification, and in many cases regulatory disclosure. Individual incidents routinely cost $50,000–$250,000 to fully remediate; at portfolio scale, annual remediation exposure can exceed $5–10 million.
 
 ## The Solution: AI-Driven Extraction at the Point of Origination
 The use case deploys a single Loan Document Intelligence Agent that performs the following pipeline automatically:
@@ -328,16 +328,16 @@ The agent uses and impacts the following applications (Table 4):
 ## 6. Business Processes
 The Loan Document Intelligence Agent impacts the following operational processes:
 
-<li>Syndicated Loan Onboarding – The agent intercepts the manual data entry step, extracting reference data from credit agreements at origination and flagging discrepancies before they are committed to source systems.</li>
-<li>Credit Agreement Processing – Transforms credit agreement review from a manual, error-prone transcription exercise into an automated extraction pipeline, reducing processing time from 2–4 hours to under 10 minutes per agreement.</li>
-<li>Loan Amendment Processing – Detects and processes amendment agreements, identifying which reference data fields are modified and reconciling amended terms against original agreement baselines.</li>
-<li>SOFR Rate Reset and Benchmark Management – Correct extraction of SOFR spread, compounding convention, and fallback language at origination directly prevents rate reset errors and associated settlement failures and counterparty disputes.</li>
-<li>Loan Reference Data Management – Continuously compares extracted fields against system-of-record entries across Loan IQ / WSO and the General Ledger, providing an ongoing data quality signal.</li>
-<li>Data Quality Exception Management – Generates prioritized exception queues for operations teams, with full evidence packages enabling rapid resolution of Critical and Warning discrepancies.</li>
-<li>Regulatory Audit and Examination Response – The complete, field-level audit trail maintained by the agent reduces evidence retrieval time for regulatory examinations from 1–2 days to under 1 hour.</li>
-<li>Error Remediation and Back-Office Investigation – By catching errors at the point of extraction, the agent eliminates the most expensive phase of the error lifecycle: back-office reconciliation, accrual recalculation, counterparty notification, and regulatory disclosure that can cost $50,000–$250,000 per incident.</li>
-<li>Counterparty Dispute Resolution – Clean, validated reference data reduces the incidence of settlement disputes and rate disagreements with counterparties, agent banks, and co-leads.</li>
-<li>Covenant Monitoring Setup – Extracts financial covenant definitions, reporting obligations, and conditions precedent and links them to borrower identifiers for ongoing monitoring system integration.</li>
+- Syndicated Loan Onboarding – The agent intercepts the manual data entry step, extracting reference data from credit agreements at origination and flagging discrepancies before they are committed to source systems.
+- Credit Agreement Processing – Transforms credit agreement review from a manual, error-prone transcription exercise into an automated extraction pipeline, reducing processing time from 2–4 hours to under 10 minutes per agreement.
+- Loan Amendment Processing – Detects and processes amendment agreements, identifying which reference data fields are modified and reconciling amended terms against original agreement baselines.
+- SOFR Rate Reset and Benchmark Management – Correct extraction of SOFR spread, compounding convention, and fallback language at origination directly prevents rate reset errors and associated settlement failures and counterparty disputes.
+- Loan Reference Data Management – Continuously compares extracted fields against system-of-record entries across Loan IQ / WSO and the General Ledger, providing an ongoing data quality signal.
+- Data Quality Exception Management – Generates prioritized exception queues for operations teams, with full evidence packages enabling rapid resolution of Critical and Warning discrepancies.
+- Regulatory Audit and Examination Response – The complete, field-level audit trail maintained by the agent reduces evidence retrieval time for regulatory examinations from 1–2 days to under 1 hour.
+- Error Remediation and Back-Office Investigation – By catching errors at the point of extraction, the agent eliminates the most expensive phase of the error lifecycle: back-office reconciliation, accrual recalculation, counterparty notification, and regulatory disclosure that can cost $50,000–$250,000 per incident.
+- Counterparty Dispute Resolution – Clean, validated reference data reduces the incidence of settlement disputes and rate disagreements with counterparties, agent banks, and co-leads.
+- Covenant Monitoring Setup – Extracts financial covenant definitions, reporting obligations, and conditions precedent and links them to borrower identifiers for ongoing monitoring system integration.
 
 ## 7. Regulations
 The following regulations govern this AI use case and agent (Table 5):
