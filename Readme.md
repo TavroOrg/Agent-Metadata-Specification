@@ -1,5 +1,14 @@
 # Agent Metadata Specification
 
+## Agent Operating Model
+
+The Agent Operating Model drives Context across multiple dimensions: Business, Technical, Functional and Risk.
+
+<p align="center">
+  <img src="./assets/images/Agent%20Operating%20Model%20Drives%20Context.png" alt="Investment Management – AI-Driven Data Quality Checks For Securitized Products" width="600" >
+  <br>
+</p>
+
 ## Introduction
 
 AI agents are multiplying across the enterprise. Similar to the challenges with shadow IT, AI agents are creating so called shadow action. AI agents are often unmanaged, unmapped and autonomous. The result is a critical visibility vacuum.
