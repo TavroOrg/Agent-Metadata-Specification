@@ -61,6 +61,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>Capgemini Norway</td>
         </tr>
         <tr>
+            <td>Kevin Ferry</td>
+            <td>Natixis Investment Advisors</td>
+        </tr>
+        <tr>
             <td>Pierre Gomes</td>
             <td>BankUnited</td>
         </tr>
