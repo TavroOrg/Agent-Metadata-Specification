@@ -1,4 +1,29 @@
-# Agent Metadata Specification
+<div align="center">
+
+  <!-- LOGO: upload travo_logo.png to your repo and update the src below -->
+  <img src="assets\images\travo_logo.png" alt="Tavro Logo" width="80" />
+
+  <h1>Agent Metadata Specification</h1>
+
+  <p><em>Enterprise-grade metadata platform enabling discovery, governance, and observability across your entire agent ecosystem</em></p>
+
+  <p>
+    <a href="https://www.tavro.ai/tavro/"><strong>Free Cloud Trial</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://www.tavro.ai/contact-us/"><strong> Live Demo</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://tavrocommunity.slack.com/join/shared_invite/zt-3xowwir93-_QZV_jMAtFDkAAfrwY9RWQ#/shared-invite/email"><strong> Slack Community</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://www.youtube.com/@Tavro-AI"><strong> YouTube</strong></a>
+  </p>
+
+  <sub>Built with ♥ by <a href="https://tavro.ai">Tavro</a></sub>
+  <hr />
+
+
+</div>
+
+<!-- Your existing README content continues below -->
 
 ## Agent Operating Model
 
