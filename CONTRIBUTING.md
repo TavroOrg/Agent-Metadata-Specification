@@ -49,6 +49,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>ZS Associates</td>
         </tr>
         <tr>
+            <td>Yoshita Dhillon</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
             <td>Tony DiPerna</td>
             <td>BankUnited</td>
         </tr>
@@ -61,8 +65,16 @@ The following individuals are acknowledged for their significant contributions t
             <td>Capgemini Norway</td>
         </tr>
         <tr>
+            <td>Abeda Essop</td>
+            <td>Sanlam South Africa</td>
+        </tr>
+        <tr>
             <td>Kevin Ferry</td>
             <td>Natixis Investment Advisors</td>
+        </tr>
+        <tr>
+            <td>Forrest Gilman</td>
+            <td>Independent Contributor</td>
         </tr>
         <tr>
             <td>Pierre Gomes</td>
@@ -97,8 +109,20 @@ The following individuals are acknowledged for their significant contributions t
             <td>Tavro AI</td>
         </tr>
         <tr>
+            <td>Mmatseleng Lefike</td>
+            <td>Sanlam South Africa</td>
+        </tr>
+        <tr>
+            <td>Jiten Mehta</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
             <td>Gokula Mishra</td>
             <td>OmniProAI (Formerly McDonald’s)</td>
+        </tr>
+        <tr>
+            <td>Fahad Moosa</td>
+            <td>Independent Contributor</td>
         </tr>
         <tr>
             <td><a href="https://github.com/rahul-tavro" target="_blank">Rahul Pandit</td>
@@ -107,6 +131,10 @@ The following individuals are acknowledged for their significant contributions t
         <tr>
             <td>Arpan Patel</td>
             <td>Delta Community Credit Union</td>
+        </tr>
+        <tr>
+            <td>Nick Raad</td>
+            <td>Independent Contributor</td>
         </tr>
         <tr>
             <td>Su Rayburn</td>
@@ -138,6 +166,10 @@ The following individuals are acknowledged for their significant contributions t
         </tr>
         <tr>
             <td>Bryan Swann</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
+            <td>Liv Watson</td>
             <td>Independent Contributor</td>
         </tr>
         <tr>
