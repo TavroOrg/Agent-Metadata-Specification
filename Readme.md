@@ -3,9 +3,9 @@
   <!-- LOGO: upload travo_logo.png to your repo and update the src below -->
   <img src="assets\images\travo_logo.png" alt="Tavro Logo" width="80" />
 
-  <h1>Agent Metadata Specification</h1>
+  <h1>Agent BizOps: Powered by Agent Metadata Specification</h1>
 
-  <p><em>Enterprise-grade metadata platform enabling discovery, governance, and observability across your entire agent ecosystem</em></p>
+  <p><em>Supporting Agent Adoption at Enterprise Scale based on Agent Metadata</em></p>
 
   <p>
     <a href="https://www.tavro.ai/tavro/"><strong>Free Cloud Trial</strong></a>
@@ -23,7 +23,14 @@
 
 </div>
 
-<!-- Your existing README content continues below -->
+## Agent BizOps
+
+Agentifying Agent Adoption at enterprise scale based on Agent Metadata.
+
+<p align="center">
+  <img src="./assets/images/Agent%20BizOps.png" alt="Agent Bizops" width="600" >
+  <br>
+</p>
 
 ## Agent Operating Model
 
