@@ -37,6 +37,10 @@ The following individuals are acknowledged for their significant contributions t
             <td>BankUnited</td>
         </tr>
         <tr>
+            <td>Madhuri Challapalli</td>
+            <td>Independent Contributor</td>
+        </tr>
+        <tr>
             <td>Stan Christiaens</td>
             <td>Collibra</td>
         </tr>
