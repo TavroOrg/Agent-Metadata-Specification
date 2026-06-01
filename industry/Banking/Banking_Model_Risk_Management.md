@@ -464,7 +464,7 @@ Table 8 summarizes guidance that impacts AI agents within model risk management 
 </p>
 
 ## JSON Schema
-Please refer to the [JSON schema](../schema/industry/banking-model-risk-management.json) that implements these enhancements for Model Risk Management in Banking.
+Please refer to the [JSON schema](../../schema/industry/banking-model-risk-management.json) that implements these enhancements for Model Risk Management in Banking.
 
 ## Contributors
 [Antonio DiPerna, BankUnited](https://www.linkedin.com/in/antonio-di-perna-851153/)
