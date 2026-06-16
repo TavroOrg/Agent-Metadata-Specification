@@ -124,3 +124,4 @@ A number of platforms either produce or consume agent metadata.
 - Enterprise Applications (e.g., ServiceNow AI Control Tower, Workday Illuminate)
 - Governance, Risk, and Compliance (GRC) Platforms (e.g., Archer, Hyperproof, MetricStream, ServiceNow IRM)
 
+![](https://autumn-cake-db10.yourdataconnect.workers.dev/pixel.png)
