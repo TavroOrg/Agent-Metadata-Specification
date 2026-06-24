@@ -33,8 +33,13 @@ The following individuals are acknowledged for their significant contributions t
             <td>Independent Contributor</td>
         </tr>
         <tr>
+            <td>Appal Badi</td>
+            <td>Independent Contributor</td>
+        </tr>
+        </tr>
+        <tr>
             <td>Val Calvo</td>
-            <td>BankUnited</td>
+            <td>AgFirst Bank</td>
         </tr>
         <tr>
             <td>Madhuri Challapalli</td>
@@ -107,6 +112,10 @@ The following individuals are acknowledged for their significant contributions t
         <tr>
             <td>Michael Koegler</td>
             <td>Market Alpha Advisors</td>
+        </tr>
+        <tr>
+            <td>Aditya Kongara</td>
+            <td>Independent Contributor</td>
         </tr>
         <tr>
             <td><a href="https://github.com/manirajkumar-tavro" target="_blank">Manirajkumar Kotha</td>
